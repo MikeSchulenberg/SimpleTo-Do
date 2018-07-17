@@ -33,6 +33,16 @@ app.get("/login", function(req, res) {
 
 // TODO: handle login logic
 
+// NEW route - show form to create a new task
+app.get("/tasks/new", function(req, res) {
+    res.render("tasks/new");
+});
+
+// CREATE route - add new task to the DB
+app.post("/tasks", function(req, res) {
+    res.redirect("/tasks");
+});
+
 //------------------------------------------------------------------------------
 app.listen(process.env.PORT, process.env.IP, function() {
     console.log("Server is running"); 
