@@ -19,7 +19,19 @@ app.get("/tasks", function(req, res) {
     res.render("tasks/index");
 });
 
-// TODO: /login and /register routes
+// show account registration form
+app.get("/register", function(req, res) {
+     res.render("register");
+});
+
+// TODO: handle signup logic
+
+// show login form
+app.get("/login", function(req, res) {
+    res.render("login"); 
+});
+
+// TODO: handle login logic
 
 //------------------------------------------------------------------------------
 app.listen(process.env.PORT, process.env.IP, function() {
