@@ -53,9 +53,14 @@ app.post("/tasks", function(req, res) {
     res.redirect("/tasks");
 });
 
-// SHOW route - show a single task
-app.get("/tasks/:id", function(req, res) {
-     res.render("tasks/show");
+// edit task route
+app.get("/tasks/:id/edit", function(req, res) {
+     res.render("tasks/edit");
+});
+
+// update task route
+app.put("/tasks/:id", function(req, res) {
+    res.redirect("/tasks");
 });
 
 //------------------------------------------------------------------------------
