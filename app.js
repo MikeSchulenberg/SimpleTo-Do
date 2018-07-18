@@ -18,9 +18,10 @@ app.get("/", function(req, res) {
     res.render("landing"); 
 });
 
-// INDEX route - show all tasks
-app.get("/tasks", function(req, res) {
-    res.render("tasks/index");
+// INDEX route - show all todos
+app.get("/todos", function(req, res) {
+    console.log("TODO: finish 'show all todos' route");
+    res.render("todos/index");
 });
 
 // show account registration form
@@ -30,7 +31,8 @@ app.get("/register", function(req, res) {
 
 // handle signup logic
 app.post ("/register", function(req, res) {
-    res.render("tasks");
+    console.log("TODO: handle user registration logic");
+    res.redirect("/todos");
 });
 
 // show login form
@@ -40,33 +42,37 @@ app.get("/login", function(req, res) {
 
 // handle login logic
 app.post("/login", function(req, res) {
-    res.render("tasks"); 
+    console.log("TODO: handle login logic");
+    res.redirect("/todos"); 
 });
 
-// NEW route - show form to create a new task
-app.get("/tasks/new", function(req, res) {
-    res.render("tasks/new");
+// NEW route - show form to create a new todo
+app.get("/todos/new", function(req, res) {
+    res.render("todos/new");
 });
 
-// CREATE route - add new task to the DB
-app.post("/tasks", function(req, res) {
-    res.redirect("/tasks");
+// CREATE route - add new todo to the DB
+app.post("/todos", function(req, res) {
+    console.log("TODO: finish 'create new todo' route");
+    res.redirect("/todos");
 });
 
-// edit task route
-app.get("/tasks/:id/edit", function(req, res) {
-     res.render("tasks/edit");
+// edit todo route
+app.get("/todos/:id/edit", function(req, res) {
+     console.log("TODO: finish 'edit todo' route");
+     res.render("todos/edit");
 });
 
-// update task route
-app.put("/tasks/:id", function(req, res) {
-    res.redirect("/tasks");
+// update todo route
+app.put("/todos/:id", function(req, res) {
+    console.log("TODO: finish 'update todo' route");
+    res.redirect("/todos");
 });
 
-// destroy task route
-app.delete("/tasks/:id", function(req, res) {
-    console.log("TODO: 'delete campground' logic");
-    res.redirect("/tasks");
+// destroy todo route
+app.delete("/todos/:id", function(req, res) {
+    console.log("TODO: finish 'delete campground' route");
+    res.redirect("/todos");
 });
 
 //------------------------------------------------------------------------------
