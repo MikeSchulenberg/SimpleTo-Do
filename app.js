@@ -2,9 +2,13 @@
 var express = require("express");
 var app = express();
 
+// init method-override
+var methodOverride = require("method-override");
+app.use(methodOverride("_method"));
+
 // configure other stuff
 app.set("view engine", "ejs");
-app.use(express.static(__dirname + "/public"));
+app.use(express.static("public"));
 
 //------------------------------------------------------------------------------
 // ROUTES
@@ -25,6 +29,9 @@ app.get("/register", function(req, res) {
 });
 
 // TODO: handle signup logic
+app.post ("/register", function(req, res) {
+    res.render("tasks");
+});
 
 // show login form
 app.get("/login", function(req, res) {
@@ -32,6 +39,9 @@ app.get("/login", function(req, res) {
 });
 
 // TODO: handle login logic
+app.post("/login", function(req, res) {
+    res.render("tasks"); 
+});
 
 // NEW route - show form to create a new task
 app.get("/tasks/new", function(req, res) {
