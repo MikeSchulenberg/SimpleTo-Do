@@ -53,6 +53,11 @@ app.post("/tasks", function(req, res) {
     res.redirect("/tasks");
 });
 
+// SHOW route - show a single task
+app.get("/tasks/:id", function(req, res) {
+     res.render("tasks/show");
+});
+
 //------------------------------------------------------------------------------
 app.listen(process.env.PORT, process.env.IP, function() {
     console.log("Server is running"); 
