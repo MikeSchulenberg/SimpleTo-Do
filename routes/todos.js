@@ -1,12 +1,6 @@
 var express = require("express");
 var router = express.Router();
 
-// show all todos
-router.get("/", function(req, res) {
-    console.log("TODO: finish 'show all todos' route");
-    res.render("todos/index");
-});
-
 // show form to create a new todo
 router.get("/new", function(req, res) {
     res.render("todos/new");
@@ -15,7 +9,7 @@ router.get("/new", function(req, res) {
 // add new todo to the DB
 router.post("/", function(req, res) {
     console.log("TODO: finish 'create new todo' route");
-    res.redirect("/todos");
+    res.redirect("/tasks");
 });
 
 // edit todo route
@@ -27,13 +21,13 @@ router.get("/:id/edit", function(req, res) {
 // update todo route
 router.put("/:id", function(req, res) {
     console.log("TODO: finish 'update todo' route");
-    res.redirect("/todos");
+    res.redirect("/tasks");
 });
 
 // destroy todo route
 router.delete("/:id", function(req, res) {
     console.log("TODO: finish 'delete campground' route");
-    res.redirect("/todos");
+    res.redirect("/tasks");
 });
 
 module.exports = router;
