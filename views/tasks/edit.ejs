@@ -2,8 +2,14 @@
 
 <h1>Edit Task</h1>
 
-<form action="/tasks/123?_method=PUT" method="POST">
-    <button class="btn btn-primary">Submit</button>
+<a class="btn btn-primary" href="/tasks">Cancel</a>
+
+<form class="inline" action="/tasks/123?_method=PUT" method="POST">
+    <button class="btn btn-primary">Save</button>
+</form>
+
+<form action="/tasks/123?_method=DELETE" method="POST">
+    <button class="btn btn-danger">Delete</button>
 </form>
 
 <% include ../partials/footer %>

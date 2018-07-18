@@ -28,7 +28,7 @@ app.get("/register", function(req, res) {
      res.render("register");
 });
 
-// TODO: handle signup logic
+// handle signup logic
 app.post ("/register", function(req, res) {
     res.render("tasks");
 });
@@ -38,7 +38,7 @@ app.get("/login", function(req, res) {
     res.render("login"); 
 });
 
-// TODO: handle login logic
+// handle login logic
 app.post("/login", function(req, res) {
     res.render("tasks"); 
 });
@@ -60,6 +60,12 @@ app.get("/tasks/:id/edit", function(req, res) {
 
 // update task route
 app.put("/tasks/:id", function(req, res) {
+    res.redirect("/tasks");
+});
+
+// destroy task route
+app.delete("/tasks/:id", function(req, res) {
+    console.log("TODO: 'delete campground' logic");
     res.redirect("/tasks");
 });
 
