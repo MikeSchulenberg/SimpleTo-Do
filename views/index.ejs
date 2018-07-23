@@ -1,12 +1,23 @@
 <% include ./partials/header %>
 
-<h1>Tasks Page</h1>
+<div id="container">
+    <h1>To-Dos<span id="toggle-form"><i class="fa fa-plus"></i></span></h1>
+    <input type="text" placeholder="Add New Todo">
 
-<p>
-    <a class="btn btn-primary" href="/todos/new">Add New Task</a>
-</p>
-<p>
-    <a class="btn btn-primary" href="/todos/123/edit">Edit Task</a>
-</p>
+    <ul>
+        <li><span><i class="fa fa-trash"></i></span> Go to Potions Class</li>
+        <li><span><i class="fa fa-trash"></i></span> Buy New Robes</li>
+        <li><span><i class="fa fa-trash"></i></span> Visit Hagrid</li>
+    </ul>
+</div>
+
+<div>
+    <p>
+        <a class="btn btn-primary" href="/todos/new">Add New Task</a>
+    </p>
+    <p>
+        <a class="btn btn-primary" href="/todos/123/edit">Edit Task</a>
+    </p>
+</div>
 
 <% include ./partials/footer %>
