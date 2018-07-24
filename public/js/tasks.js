@@ -1,13 +1,14 @@
 /* global $ */
 
 // Check off specific todos by clicking
-$("ul").on("click", "li", function() {
-    $(this).toggleClass("completed");
-    console.log("task clicked");
-});
+// $("ul").on("click", "li", function() {
+//     $(this).toggleClass("completed");
+//     console.log("task clicked");
+// });
 
 // Click on X to delete todo
 $("ul").on("click", "span", function(event) {
+    $(this).parent().toggleClass("completed");
     $(this).parent().fadeOut(500, function() {
         $(this).remove();
     });
@@ -25,6 +26,6 @@ $("input[type='text']").keypress(function(event) {
     }
 });
 
-$("#toggle-form").click(function(){
-	$("input[type='text']").fadeToggle();
-});
+// $("#toggle-form").click(function(){
+// 	$("input[type='text']").fadeToggle();
+// });

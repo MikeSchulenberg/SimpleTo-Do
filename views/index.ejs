@@ -1,13 +1,25 @@
 <% include ./partials/header %>
 
 <div id="container">
-    <h1>To-Dos<span id="toggle-form"><i class="fa fa-plus"></i></span></h1>
-    <input type="text" placeholder="Add New Todo">
+    <h1>To-Dos<span><i class="fa fa-plus"></i></span></h1>
+    <input type="text" placeholder="Add a new To-Do">
 
     <ul>
-        <li><span><i class="fa fa-trash"></i></span> Go to Potions Class</li>
-        <li><span><i class="fa fa-trash"></i></span> Buy New Robes</li>
-        <li><span><i class="fa fa-trash"></i></span> Visit Hagrid</li>
+        <li>
+            <span class="high-priority">
+                <input type="checkbox">
+            </span> Add a new High priority To-Do
+        </li>
+        <li>
+            <span class="medium-priority">
+                <input type="checkbox">
+            </span> Add a new Medium priority To-Do
+        </li>
+        <li>
+            <span class="low-priority">
+                <input type="checkbox">
+            </span> Add a new Low priority To-Do
+        </li>
     </ul>
 </div>
 

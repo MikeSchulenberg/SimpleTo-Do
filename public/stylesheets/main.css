@@ -21,10 +21,12 @@ li span {
     margin-right: 20px;
     text-align: center;
     color: white;
-    width: 0;
+    /*width: 0;*/
+    width: 40px;
     display: inline-block;
     transition: 0.2s linear;
-    opacity: 0;
+    /*opacity: 0;*/
+    opacity: 1.0;
 }
 
 ul {
@@ -49,10 +51,10 @@ li:nth-child(2n) {
     background: #f7f7f7;
 }
 
-li:hover span {
-    width: 40px;
-    opacity: 1.0;
-}
+/*li:hover span {*/
+/*    width: 40px;*/
+/*    opacity: 1.0;*/
+/*}*/
 
 input {
     font-size: 18px;
@@ -87,4 +89,49 @@ input:focus {
 
 .inline {
     display: inline;
+}
+
+.high-priority {
+    background-color: #ac0000;
+}
+
+.medium-priority {
+    background-color: #f8801c;
+}
+
+.low-priority {
+    background-color: #fcc12b;
+}
+
+input[type=checkbox] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    width: 1em;
+    height: 1em;
+    border: 1px solid rgba(0, 0, 0, 0);
+    vertical-align: -3px;
+}
+
+input[type=checkbox]:hover {
+    border: 2px solid #2980b9;
+}
+
+/* For IE?*/
+input[type=checkbox]::-ms-check {
+  display: none;
+}
+
+input[type=checkbox]::before {
+    content: "✔";
+    position: absolute;
+    font-size: 1.2em;
+    right: 0;
+    top: -0.53em;
+    visibility: hidden;
+}
+
+input[type=checkbox]:checked::before {
+    /* Use `visibility` instead of `display` to avoid recalculating layout */
+    visibility: visible;
 }
