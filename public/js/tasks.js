@@ -7,9 +7,9 @@
 // });
 
 // Click on X to delete todo
-$("ul").on("click", "span", function(event) {
-    $(this).parent().toggleClass("completed");
-    $(this).parent().fadeOut(500, function() {
+$("ul").on("click", "input[type=checkbox]", function(event) {
+    $(this).parent().parent().toggleClass("completed");
+    $(this).parent().parent().fadeOut(500, function() {
         $(this).remove();
     });
     event.stopPropagation();    // prevent event bubbling
