@@ -16,16 +16,11 @@ body {
 }
 
 li span {
-    background: #e74c3c;
     height: 40px;
     margin-right: 20px;
     text-align: center;
-    color: white;
-    /*width: 0;*/
     width: 40px;
     display: inline-block;
-    transition: 0.2s linear;
-    /*opacity: 0;*/
     opacity: 1.0;
 }
 
@@ -134,4 +129,19 @@ input[type=checkbox]::before {
 input[type=checkbox]:checked::before {
     /* Use `visibility` instead of `display` to avoid recalculating layout */
     visibility: visible;
+}
+
+.fa-ellipsis-v {
+    float: right;
+    display: inline;
+    padding: 12px 0;
+    padding-right: 10px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.25s linear, opacity 0.25s linear;
+}
+
+li:hover .fa-ellipsis-v {
+    visibility: visible;
+    opacity: 1;
 }
