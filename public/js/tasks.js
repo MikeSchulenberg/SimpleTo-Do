@@ -26,15 +26,17 @@ $("input[type='text']").keypress(function(event) {
         $("ul").append(
             `
             <li>
-                <span class="${todoPriority}">
-                    <input type="checkbox">
-                </span> 
-                <span class="inline">
-                    ${todoText}
-                </span>
-                <span class="inline">
-                    <i class="fas fa-ellipsis-v"></i>
-                </span>
+                <div class="container-task">
+                    <div class="task-left-control ${todoPriority}">
+                        <input type="checkbox">
+                    </div> 
+                    <div class="task-body">
+                        ${todoText}
+                    </div>
+                    <div class="task-actions-control">
+                        <a><i class="fas fa-ellipsis-v"></i></a>
+                    </div>
+                </div>
             </li>
             `
         );
