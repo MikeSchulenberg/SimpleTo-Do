@@ -6,6 +6,12 @@
 //     console.log("task clicked");
 // });
 
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+});
+
+// $('[data-toggle="tooltip"]').tooltip({ boundary: "window" });
+
 // Click on X to delete todo
 $("ul").on("click", "input[type=checkbox]", function(event) {
     $(this).parent().parent().toggleClass("completed");
@@ -34,12 +40,15 @@ $("input[type='text']").keypress(function(event) {
                         ${todoText}
                     </div>
                     <div class="task-actions-control">
-                        <a><i class="fas fa-ellipsis-v"></i></a>
+                        <a><i class="fas fa-ellipsis-v" data-toggle="tooltip" data-placement="left" data-boundary="window" title="Actions"></i></a>
                     </div>
                 </div>
             </li>
             `
         );
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        });
     }
 });
 

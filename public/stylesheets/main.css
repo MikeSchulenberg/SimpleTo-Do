@@ -129,9 +129,7 @@ input[type=checkbox]:checked::before {
 
 .fa-ellipsis-v {
     float: right;
-    display: inline;
-    padding: 12px 0;
-    padding-right: 10px;
+    padding: 12px 10px;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0.25s linear, opacity 0.25s linear;
