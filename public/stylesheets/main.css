@@ -16,7 +16,7 @@ body {
 }
 
 li span {
-    height: 40px;
+    height: 100%;
     margin-right: 20px;
     text-align: center;
     width: 40px;
@@ -32,7 +32,7 @@ ul {
 
 li {
     background: #fff;
-    height: 40px;
+    height: 100%;
     line-height: 40px;
     color: #666;
 }
@@ -45,11 +45,6 @@ li {
 li:nth-child(2n) {
     background: #f7f7f7;
 }
-
-/*li:hover span {*/
-/*    width: 40px;*/
-/*    opacity: 1.0;*/
-/*}*/
 
 input {
     font-size: 18px;
@@ -106,6 +101,7 @@ input[type=checkbox] {
     height: 1em;
     border: 1px solid rgba(0, 0, 0, 0);
     vertical-align: -3px;
+    overflow: hidden;
 }
 
 input[type=checkbox]:hover {
@@ -144,4 +140,26 @@ input[type=checkbox]:checked::before {
 li:hover .fa-ellipsis-v {
     visibility: visible;
     opacity: 1;
+}
+
+.container-task {
+    display: block;
+    overflow: auto;
+}
+
+.task-left-control {
+    /*height: 40px;*/
+    height: 100%;
+    margin-right: 20px;
+    text-align: center;
+    width: 40px;
+    display: inline-block;
+}
+
+.task-body {
+    display: inline;
+}
+
+.task-actions-control {
+    display: inline;
 }
