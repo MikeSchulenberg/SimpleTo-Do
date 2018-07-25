@@ -22,7 +22,22 @@ $("input[type='text']").keypress(function(event) {
         var todoText = $(this).val();
         $(this).val("");
         // create a new li and add to ul
-        $("ul").append("<li><span><i class='fa fa-trash'></i></span> " + todoText + "</li>");
+        var todoPriority = "high-priority"; // temp
+        $("ul").append(
+            `
+            <li>
+                <span class="${todoPriority}">
+                    <input type="checkbox">
+                </span> 
+                <span class="inline">
+                    ${todoText}
+                </span>
+                <span class="inline">
+                    <i class="fas fa-ellipsis-v"></i>
+                </span>
+            </li>
+            `
+        );
     }
 });
 
