@@ -1,11 +1,6 @@
 /* global $ */
 
-// Check off specific todos by clicking
-// $("ul").on("click", "li", function() {
-//     $(this).toggleClass("completed");
-//     console.log("task clicked");
-// });
-
+// initialize tooltips
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 });
@@ -46,12 +41,10 @@ $("input[type='text']").keypress(function(event) {
             </li>
             `
         );
+        
+        // reinitialize tooltips
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
         });
     }
 });
-
-// $("#toggle-form").click(function(){
-// 	$("input[type='text']").fadeToggle();
-// });
