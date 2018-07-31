@@ -5,6 +5,13 @@ body {
     background: linear-gradient(to left, #EAECC6, #2BC0E4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+#container {
+    width: 450px;
+    margin: 100px auto;
+    background: #f7f7f7;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
 #container h1 {
     background: #2980b9;
     color: white;
@@ -15,15 +22,6 @@ body {
     font-weight: normal;
 }
 
-/*li span {*/
-/*    height: 100%;*/
-/*    margin-right: 20px;*/
-/*    text-align: center;*/
-/*    width: 40px;*/
-/*    display: inline-block;*/
-/*    opacity: 1.0;*/
-/*}*/
-
 ul {
     list-style: none;
     margin: 0;
@@ -32,20 +30,13 @@ ul {
 
 li {
     background: #fff;
-    /*height: 40px;*/
     height: 100%;
     line-height: 40px;
     color: #666;
-    
-    /* testing */
     position: relative;
     width: 100%;
     overflow: hidden;
 }
-
-/*.fa-plus {*/
-/*    float: right;*/
-/*}*/
 
 /* select every other li */
 li:nth-child(2n) {
@@ -71,32 +62,14 @@ input:focus {
     outline: none;
 }
 
-#container {
-    width: 450px;
-    margin: 100px auto;
-    background: #f7f7f7;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
-}
-
-.completed {
-    color: gray;
-    text-decoration: line-through;
-}
-
-/*.inline {*/
-/*    display: inline;*/
-/*}*/
-
-.high-priority {
-    background-color: #ac0000;
-}
-
-.medium-priority {
-    background-color: #f8801c;
-}
-
-.low-priority {
-    background-color: #fcc12b;
+.task-left-control {
+    margin-right: 20px;
+    text-align: center;
+    width: 40px;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    height: 100%;
 }
 
 input[type=checkbox] {
@@ -107,7 +80,6 @@ input[type=checkbox] {
     height: 1em;
     border: 1px solid rgba(0, 0, 0, 0);
     vertical-align: -3px;
-    /*overflow: hidden;*/
 }
 
 input[type=checkbox]:hover {
@@ -133,6 +105,36 @@ input[type=checkbox]:checked::before {
     visibility: visible;
 }
 
+.high-priority {
+    background-color: #ac0000;
+}
+
+.medium-priority {
+    background-color: #f8801c;
+}
+
+.low-priority {
+    background-color: #fcc12b;
+}
+
+.task-body {
+    display: inline-block;
+    width: 370px;
+    position: relative;
+    left: 60px;
+    overflow: auto;
+}
+
+.completed {
+    color: gray;
+    text-decoration: line-through;
+}
+
+.task-actions-control {
+    display: inline-block;
+    width: 20px;
+}
+
 .fa-ellipsis-v {
     float: right;
     padding: 12px 10px;
@@ -146,68 +148,3 @@ li:hover .fa-ellipsis-v {
     visibility: visible;
     opacity: 1;
 }
-
-/*.container-task {*/
-/*    display: block;*/
-    /*overflow: auto;*/
-/*    overflow: visible;*/
-/*    height: 40px;*/
-/*}*/
-
-.task-left-control {
-    margin-right: 20px;
-    text-align: center;
-    width: 40px;
-    display: inline-block;
-    
-    /* testing */
-    position: absolute;
-    top: 0;
-    /*left: 0;*/
-    height: 100%;
-    /*overflow: hidden;*/
-    
-}
-
-.task-body {
-    /*display: inline;*/
-    display: inline-block;
-    width: 370px;
-    
-    /* testing */
-    position: relative;
-    left: 60px;
-    overflow: auto;
-}
-
-.task-actions-control {
-    display: inline-block;
-    width: 20px;
-}
-
-/* BUTTON ATTEMPT - START */
-
-/* testing for button version of popup menu*/
-/*.task-right-control {*/
-/*    display: inline;*/
-    /*float: right;*/
-/*}*/
-
-/*.actions-button {*/
-/*    float: right;*/
-/*    transform: scale(0.8);*/
-/*    margin: 4px auto;*/
-/*}*/
-
-/*.actions-button {*/
-/*    visibility: hidden;*/
-/*    opacity: 0;*/
-/*    transition: visibility 0.25s linear, opacity 0.25s linear;*/
-/*}*/
-
-/*li:hover .actions-button {*/
-/*    visibility: visible;*/
-/*    opacity: 1;*/
-/*}*/
-
-/* BUTTON ATTEMPT - END */
