@@ -15,14 +15,14 @@ body {
     font-weight: normal;
 }
 
-/*li span {*/
-/*    height: 100%;*/
-/*    margin-right: 20px;*/
-/*    text-align: center;*/
-/*    width: 40px;*/
-/*    display: inline-block;*/
-/*    opacity: 1.0;*/
-/*}*/
+li span {
+    height: 100%;
+    margin-right: 20px;
+    text-align: center;
+    width: 40px;
+    display: inline-block;
+    opacity: 1.0;
+}
 
 ul {
     list-style: none;
@@ -32,20 +32,14 @@ ul {
 
 li {
     background: #fff;
-    /*height: 40px;*/
     height: 100%;
     line-height: 40px;
     color: #666;
-    
-    /* testing */
-    position: relative;
-    width: 100%;
-    overflow: hidden;
 }
 
-/*.fa-plus {*/
-/*    float: right;*/
-/*}*/
+.fa-plus {
+    float: right;
+}
 
 /* select every other li */
 li:nth-child(2n) {
@@ -83,9 +77,9 @@ input:focus {
     text-decoration: line-through;
 }
 
-/*.inline {*/
-/*    display: inline;*/
-/*}*/
+.inline {
+    display: inline;
+}
 
 .high-priority {
     background-color: #ac0000;
@@ -107,7 +101,7 @@ input[type=checkbox] {
     height: 1em;
     border: 1px solid rgba(0, 0, 0, 0);
     vertical-align: -3px;
-    /*overflow: hidden;*/
+    overflow: hidden;
 }
 
 input[type=checkbox]:hover {
@@ -147,57 +141,39 @@ li:hover .fa-ellipsis-v {
     opacity: 1;
 }
 
-/*.container-task {*/
-/*    display: block;*/
+.container-task {
+    display: block;
     /*overflow: auto;*/
-/*    overflow: visible;*/
-/*    height: 40px;*/
-/*}*/
+    overflow: visible;
+    height: 40px;
+}
 
 .task-left-control {
     margin-right: 20px;
     text-align: center;
     width: 40px;
     display: inline-block;
-    
-    /* testing */
-    position: absolute;
-    top: 0;
-    /*left: 0;*/
-    height: 100%;
-    /*overflow: hidden;*/
-    
 }
 
 .task-body {
-    /*display: inline;*/
-    display: inline-block;
-    width: 370px;
-    
-    /* testing */
-    position: relative;
-    left: 60px;
-    overflow: auto;
+    display: inline;
 }
 
 .task-actions-control {
-    display: inline-block;
-    width: 20px;
+    display: inline;
 }
 
-/* BUTTON ATTEMPT - START */
-
 /* testing for button version of popup menu*/
-/*.task-right-control {*/
-/*    display: inline;*/
+.task-right-control {
+    display: inline;
     /*float: right;*/
-/*}*/
+}
 
-/*.actions-button {*/
-/*    float: right;*/
-/*    transform: scale(0.8);*/
-/*    margin: 4px auto;*/
-/*}*/
+.actions-button {
+    float: right;
+    transform: scale(0.8);
+    margin: 4px auto;
+}
 
 /*.actions-button {*/
 /*    visibility: hidden;*/
@@ -209,5 +185,3 @@ li:hover .fa-ellipsis-v {
 /*    visibility: visible;*/
 /*    opacity: 1;*/
 /*}*/
-
-/* BUTTON ATTEMPT - END */

@@ -30,7 +30,6 @@ router.post("/login", function(req, res) {
 // show all tasks
 router.get("/tasks", function(req, res) {
     console.log("TODO: finish 'show all todos' route");
-    //res.render("index");
     res.render("index");
 });
 

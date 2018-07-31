@@ -9,7 +9,7 @@ $(function () {
 
 // Click on X to delete todo
 $("ul").on("click", "input[type=checkbox]", function(event) {
-    $(this).parent().siblings(".task-body").toggleClass("completed");
+    $(this).parent().parent().toggleClass("completed");
     $(this).parent().parent().fadeOut(500, function() {
         $(this).remove();
     });
