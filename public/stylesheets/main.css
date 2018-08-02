@@ -119,10 +119,10 @@ input[type=checkbox]:checked::before {
 
 .task-body {
     display: inline-block;
-    width: 370px;
+    /*width: 370px;*/
+    width: 360px;
     position: relative;
     left: 60px;
-    /*overflow: auto;*/
 }
 
 .completed {
@@ -130,21 +130,54 @@ input[type=checkbox]:checked::before {
     text-decoration: line-through;
 }
 
-.task-actions-control {
-    display: inline-block;
-    width: 20px;
-}
-
-.fa-ellipsis-v {
+.fa-edit {
     float: right;
-    padding: 12px 10px;
-    visibility: hidden;
+    margin-top: 12px;
+    margin-right: 5px;
     opacity: 0;
     transition: visibility 0.25s linear, opacity 0.25s linear;
-    color: #666;
 }
 
-li:hover .fa-ellipsis-v {
+li:hover .fa-edit {
     visibility: visible;
     opacity: 1;
 }
+
+/*.task-actions-control {*/
+/*    display: inline-block;*/
+/*    width: 30px;*/
+/*    float: right;*/
+    
+    /* TESTING */
+    
+/*}*/
+
+/*.fa-ellipsis-v {*/
+/*    margin-left: 7px;*/
+/*    opacity: 0;*/
+/*    transition: visibility 0.25s linear, opacity 0.25s linear;*/
+/*    color: #666;*/
+/*}*/
+
+/*li:hover .fa-ellipsis-v {*/
+/*    visibility: visible;*/
+/*    opacity: 1;*/
+/*}*/
+
+/* TESTING */
+
+/* use with div*/
+/*.fa-edit {*/
+    /*float: right;*/
+/*    margin: 7px 7px;*/
+    /*vertical-align: middle;*/
+    /*display: inline-block;*/
+    /*width: 30px;*/
+    /*text-align: center;*/
+/*}*/
+
+/*.fa-edit {*/
+/*    float: right;*/
+/*    margin-top: 12px;*/
+/*    margin-right: 5px;*/
+/*}*/
