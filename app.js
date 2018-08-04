@@ -6,6 +6,10 @@ var app = express();
 var methodOverride = require("method-override");
 app.use(methodOverride("_method"));
 
+// init mongoose
+var mongoose = require("mongoose");
+mongoose.connect("mongodb://localhost:27017/simple-to-do-test", {useNewUrlParser: true});
+
 // configure other stuff
 app.set("view engine", "ejs");
 app.use(express.static("public"));
