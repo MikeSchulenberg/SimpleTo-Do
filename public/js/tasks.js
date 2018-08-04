@@ -5,8 +5,6 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 });
 
-// $('[data-toggle="tooltip"]').tooltip({ boundary: "window" });
-
 // Click on X to delete todo
 $("ul").on("click", "input[type=checkbox]", function(event) {
     $(this).parent().siblings(".task-body").toggleClass("completed");
