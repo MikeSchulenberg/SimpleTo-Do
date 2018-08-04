@@ -10,6 +10,10 @@ app.use(methodOverride("_method"));
 var mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost:27017/simple-to-do-test", {useNewUrlParser: true});
 
+// seed the DB with data
+var seedDB = require("./DBseeds.js");
+seedDB();
+
 // configure other stuff
 app.set("view engine", "ejs");
 app.use(express.static("public"));
