@@ -5,143 +5,170 @@
     <input type="text" placeholder="Add a new To-Do">
 
     <ul>
-        <li>
-                <div class="task-left-control high-priority">
+        <% todos.forEach(function(todo) { %>
+            <li>
+                <!-- Determine what color to use for each checkbox based on
+                the priority of the todo -->
+                <% var priorityClass; %>
+                <% switch(todo.priority) {
+                    case "high": %>
+                        <% priorityClass = "high-priority"; %>
+                        <% break;
+                    case "medium": %>
+                        <% priorityClass = "medium-priority"; %>
+                        <% break;
+                    case "low": %>
+                        <% priorityClass = "low-priority"; %>
+                        <% break;
+                } %>
+                
+                <div class="task-left-control <%= priorityClass %>">
                     <input type="checkbox">
                 </div>
                 <div class="task-body">
-                    Add a new High priority To-Do
+                    <%= todo.title %>
                 </div>
                 <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>
-        </li>
-        <li>
-                <div class="task-left-control medium-priority">
-                    <input type="checkbox">
-                </div>
-                <div class="task-body">
-                    Add a new Medium priority To-Do the quick brown fox jumped over the lazy dog the quick brown fox
-                </div>
-                <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>
-        </li>
-        <li>
-                <div class="task-left-control low-priority">
-                    <input type="checkbox">
-                </div>
-                <div class="task-body">
-                    Add a new Low priority To-Do
-                </div>
-                <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>
-        </li>
+            </li>
+        <% }); %>
+        
+        <!--<li>-->
+        <!--        <div class="task-left-control high-priority">-->
+        <!--            <input type="checkbox">-->
+        <!--        </div>-->
+        <!--        <div class="task-body">-->
+        <!--            Add a new High priority To-Do-->
+        <!--        </div>-->
+        <!--        <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--        <div class="task-left-control medium-priority">-->
+        <!--            <input type="checkbox">-->
+        <!--        </div>-->
+        <!--        <div class="task-body">-->
+        <!--            Add a new Medium priority To-Do the quick brown fox jumped over the lazy dog the quick brown fox-->
+        <!--        </div>-->
+        <!--        <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--        <div class="task-left-control low-priority">-->
+        <!--            <input type="checkbox">-->
+        <!--        </div>-->
+        <!--        <div class="task-body">-->
+        <!--            Add a new Low priority To-Do-->
+        <!--        </div>-->
+        <!--        <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>-->
+        <!--</li>-->
         
         
-        <li>
-                <div class="task-left-control low-priority">
-                    <input type="checkbox">
-                </div>
-                <div class="task-body">
-                    Add a new Low priority To-Do
-                </div>
-                <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>
-        </li>
-        <li>
-                <div class="task-left-control low-priority">
-                    <input type="checkbox">
-                </div>
-                <div class="task-body">
-                    Add a new Low priority To-Do
-                </div>
-                <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>
-        </li>
-        <li>
-                <div class="task-left-control low-priority">
-                    <input type="checkbox">
-                </div>
-                <div class="task-body">
-                    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-                </div>
-                <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>
-        </li>
-        <li>
-                <div class="task-left-control low-priority">
-                    <input type="checkbox">
-                </div>
-                <div class="task-body">
-                    Add a new Low priority To-Do
-                </div>
-                <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>
-        </li>
-        <li>
-                <div class="task-left-control low-priority">
-                    <input type="checkbox">
-                </div>
-                <div class="task-body">
-                    Add a new Low priority To-Do
-                </div>
-                <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>
-        </li>
-        <li>
-                <div class="task-left-control low-priority">
-                    <input type="checkbox">
-                </div>
-                <div class="task-body">
-                    Add a new Low priority To-Do
-                </div>
-                <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>
-        </li>
-        <li>
-                <div class="task-left-control low-priority">
-                    <input type="checkbox">
-                </div>
-                <div class="task-body">
-                    Add a new Low priority To-Do
-                </div>
-                <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>
-        </li>
-        <li>
-                <div class="task-left-control low-priority">
-                    <input type="checkbox">
-                </div>
-                <div class="task-body">
-                    Add a new Low priority To-Do
-                </div>
-                <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>
-        </li>
-        <li>
-                <div class="task-left-control low-priority">
-                    <input type="checkbox">
-                </div>
-                <div class="task-body">
-                    Add a new Low priority To-Do the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog
-                </div>
-                <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>
-        </li>
-        <li>
-                <div class="task-left-control low-priority">
-                    <input type="checkbox">
-                </div>
-                <div class="task-body">
-                    Add a new Low priority To-Do
-                </div>
-                <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>
-        </li>
-        <li>
-                <div class="task-left-control low-priority">
-                    <input type="checkbox">
-                </div>
-                <div class="task-body">
-                    Add a new Low priority To-Do
-                </div>
-                <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>
-        </li>
-        <li>
-                <div class="task-left-control low-priority">
-                    <input type="checkbox">
-                </div>
-                <div class="task-body">
-                    Add a new Low priority To-Do
-                </div>
-                <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>
-        </li>
+        <!--<li>-->
+        <!--        <div class="task-left-control low-priority">-->
+        <!--            <input type="checkbox">-->
+        <!--        </div>-->
+        <!--        <div class="task-body">-->
+        <!--            Add a new Low priority To-Do-->
+        <!--        </div>-->
+        <!--        <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--        <div class="task-left-control low-priority">-->
+        <!--            <input type="checkbox">-->
+        <!--        </div>-->
+        <!--        <div class="task-body">-->
+        <!--            Add a new Low priority To-Do-->
+        <!--        </div>-->
+        <!--        <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--        <div class="task-left-control low-priority">-->
+        <!--            <input type="checkbox">-->
+        <!--        </div>-->
+        <!--        <div class="task-body">-->
+        <!--            ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff-->
+        <!--        </div>-->
+        <!--        <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--        <div class="task-left-control low-priority">-->
+        <!--            <input type="checkbox">-->
+        <!--        </div>-->
+        <!--        <div class="task-body">-->
+        <!--            Add a new Low priority To-Do-->
+        <!--        </div>-->
+        <!--        <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--        <div class="task-left-control low-priority">-->
+        <!--            <input type="checkbox">-->
+        <!--        </div>-->
+        <!--        <div class="task-body">-->
+        <!--            Add a new Low priority To-Do-->
+        <!--        </div>-->
+        <!--        <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--        <div class="task-left-control low-priority">-->
+        <!--            <input type="checkbox">-->
+        <!--        </div>-->
+        <!--        <div class="task-body">-->
+        <!--            Add a new Low priority To-Do-->
+        <!--        </div>-->
+        <!--        <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--        <div class="task-left-control low-priority">-->
+        <!--            <input type="checkbox">-->
+        <!--        </div>-->
+        <!--        <div class="task-body">-->
+        <!--            Add a new Low priority To-Do-->
+        <!--        </div>-->
+        <!--        <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--        <div class="task-left-control low-priority">-->
+        <!--            <input type="checkbox">-->
+        <!--        </div>-->
+        <!--        <div class="task-body">-->
+        <!--            Add a new Low priority To-Do-->
+        <!--        </div>-->
+        <!--        <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--        <div class="task-left-control low-priority">-->
+        <!--            <input type="checkbox">-->
+        <!--        </div>-->
+        <!--        <div class="task-body">-->
+        <!--            Add a new Low priority To-Do the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog-->
+        <!--        </div>-->
+        <!--        <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--        <div class="task-left-control low-priority">-->
+        <!--            <input type="checkbox">-->
+        <!--        </div>-->
+        <!--        <div class="task-body">-->
+        <!--            Add a new Low priority To-Do-->
+        <!--        </div>-->
+        <!--        <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--        <div class="task-left-control low-priority">-->
+        <!--            <input type="checkbox">-->
+        <!--        </div>-->
+        <!--        <div class="task-body">-->
+        <!--            Add a new Low priority To-Do-->
+        <!--        </div>-->
+        <!--        <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--        <div class="task-left-control low-priority">-->
+        <!--            <input type="checkbox">-->
+        <!--        </div>-->
+        <!--        <div class="task-body">-->
+        <!--            Add a new Low priority To-Do-->
+        <!--        </div>-->
+        <!--        <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>-->
+        <!--</li>-->
     </ul>
 </div>
 

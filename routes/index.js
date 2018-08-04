@@ -1,5 +1,6 @@
 var express = require("express");
 var router = express.Router();
+var Todo = require("../models/todo");
 
 router.get("/", function(req, res) {
     res.render("landing"); 
@@ -29,8 +30,15 @@ router.post("/login", function(req, res) {
 
 // show all tasks
 router.get("/tasks", function(req, res) {
-    console.log("TODO: finish 'show all todos' route");
-    res.render("index");
+    Todo.find({}, function(err, allTodos) {
+        if (err) {
+            console.log(err);
+        }
+        
+        else {
+            res.render("index", {todos: allTodos});
+        }
+    })
 });
 
 module.exports = router;
