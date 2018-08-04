@@ -140,3 +140,8 @@ li:hover .fa-edit {
     visibility: visible;
     opacity: 1;
 }
+
+/* TEMP */
+.fa-plus {
+    float: right;
+}
