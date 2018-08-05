@@ -141,6 +141,34 @@ li:hover .fa-edit {
     opacity: 1;
 }
 
+.form-label {
+    color: #2980b9;
+    padding-left: 24px;
+}
+
+.radio-button-container {
+    display: inline;
+}
+
+.radio-button-group {
+    margin: 20px 45px;
+}
+
+.button-high-priority {
+    background-color: #ac0000;
+    color: white;
+}
+
+.button-medium-priority {
+    background-color: #f8801c;
+    color: white;
+}
+
+.button-low-priority {
+    background-color: #fcc12b;
+    color: white;
+}
+
 /* TEMP */
 .fa-plus {
     float: right;

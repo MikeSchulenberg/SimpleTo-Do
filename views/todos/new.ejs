@@ -1,9 +1,31 @@
 <% include ../partials/header %>
 
-<h1>Add New Task</h1>
+<div id="container">
+    <h1>Add New To-Do</h1>
+    
+    <form action="/todos" method="POST">
+        <input type="text" placeholder="Enter a description for this To-Do">
+        <span class="form-label">Priority:</span>
+        <div class="radio-button-container">
+            <div class="btn-group btn-group-toggle radio-button-group" data-toggle="buttons">
+                <label class="btn button-high-priority">
+                    <input type="radio" name="options" id="option1" autocomplete="off"> High
+                </label>
+                <label class="btn button-medium-priority active">
+                    <input type="radio" name="options" id="option2" autocomplete="off" checked> Medium
+                </label>
+                <label class="btn button-low-priority">
+                    <input type="radio" name="options" id="option3" autocomplete="off"> Low
+                </label>
+            </div>
+        </div>
+    </form>
+</div>
 
-<form action="/todos" method="POST">
-    <button class="btn btn-primary">Submit</button>
-</form>
+<!--<h1>Add New Task</h1>-->
+
+<!--<form action="/todos" method="POST">-->
+<!--    <button class="btn btn-primary">Submit</button>-->
+<!--</form>-->
 
 <% include ../partials/footer %>
