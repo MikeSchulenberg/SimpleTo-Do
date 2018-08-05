@@ -157,16 +157,23 @@ li:hover .fa-edit {
 .button-high-priority {
     background-color: #ac0000;
     color: white;
+    width: 60px;
 }
 
 .button-medium-priority {
     background-color: #f8801c;
     color: white;
+    width: 84px;
 }
 
 .button-low-priority {
     background-color: #fcc12b;
     color: white;
+    width: 60px;
+}
+
+.cancel-submit-button {
+    width: 76px;
 }
 
 /* TEMP */
