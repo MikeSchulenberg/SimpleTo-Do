@@ -160,16 +160,28 @@ li:hover .fa-edit {
     width: 60px;
 }
 
+.button-high-priority:hover {
+    background-color: #990000;
+}
+
 .button-medium-priority {
     background-color: #f8801c;
     color: white;
     width: 84px;
 }
 
+.button-medium-priority:hover {
+    background-color: #df6807;
+}
+
 .button-low-priority {
     background-color: #fcc12b;
     color: white;
     width: 60px;
+}
+
+.button-low-priority:hover {
+    background-color: #fbb303;
 }
 
 .cancel-submit-button {
