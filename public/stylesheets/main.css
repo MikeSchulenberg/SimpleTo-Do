@@ -161,12 +161,7 @@ li:hover .fa-edit {
     width: 60px;
 }
 
-.button-high-priority:hover {
-    background-color: #ac0000;
-    border-color: #9d0000;
-    color: white;
-}
-
+.button-high-priority:hover,
 .button-high-priority.active {
     background-color: #ac0000;
     border-color: #9d0000;
@@ -180,12 +175,7 @@ li:hover .fa-edit {
     width: 84px;
 }
 
-.button-medium-priority:hover {
-    background-color: #f8801c;
-    border-color: #f8760c;
-    color: white;
-}
-
+.button-medium-priority:hover,
 .button-medium-priority.active {
     background-color: #f8801c;
     border-color: #f8760c;
@@ -199,12 +189,7 @@ li:hover .fa-edit {
     width: 60px;
 }
 
-.button-low-priority:hover {
-    background-color: #fcc12b;
-    border-color: #fcbc14;
-    color: white;
-}
-
+.button-low-priority:hover,
 .button-low-priority.active {
     background-color: #fcc12b;
     border-color: #fcbc14;
