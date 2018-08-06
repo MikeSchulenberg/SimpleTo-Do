@@ -1,5 +1,6 @@
 var express = require("express");
 var router = express.Router();
+var Todo = require("../models/todo");
 
 // show form to create a new todo
 router.get("/new", function(req, res) {
@@ -8,8 +9,20 @@ router.get("/new", function(req, res) {
 
 // add new todo to the DB
 router.post("/", function(req, res) {
-    console.log("TODO: finish 'create new todo' route");
-    res.redirect("/tasks");
+    var title = req.body.title;
+    var priority = req.body.options;
+    
+    var newTodo = {title: title, priority: priority};
+    
+    Todo.create(newTodo, function(err) {
+        if (err) {
+            console.log(err);
+        }
+        
+        else {
+            res.redirect("/tasks");
+        }
+    })
 });
 
 // edit todo route
