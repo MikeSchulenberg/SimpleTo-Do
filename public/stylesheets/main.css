@@ -155,33 +155,60 @@ li:hover .fa-edit {
 }
 
 .button-high-priority {
-    background-color: #ac0000;
-    color: white;
+    border-color: #2980b9;
+    color: #2980b9;
+    background-color: white;
     width: 60px;
 }
 
 .button-high-priority:hover {
-    background-color: #880000;
+    background-color: #ac0000;
+    border-color: #9d0000;
+    color: white;
+}
+
+.button-high-priority.active {
+    background-color: #ac0000;
+    border-color: #9d0000;
+    color: white;
 }
 
 .button-medium-priority {
-    background-color: #f8801c;
-    color: white;
+    border-color: #2980b9;
+    color: #2980b9;
+    background-color: white;
     width: 84px;
 }
 
 .button-medium-priority:hover {
-    background-color: #e66307;
+    background-color: #f8801c;
+    border-color: #f8760c;
+    color: white;
+}
+
+.button-medium-priority.active {
+    background-color: #f8801c;
+    border-color: #f8760c;
+    color: white;
 }
 
 .button-low-priority {
-    background-color: #fcc12b;
-    color: white;
+    border-color: #2980b9;
+    color: #2980b9;
+    background-color: white;
     width: 60px;
 }
 
 .button-low-priority:hover {
-    background-color: #fbb303;
+    background-color: #fcc12b;
+    border-color: #fcbc14;
+    color: white;
+}
+
+.button-low-priority.active {
+    background-color: #fcc12b;
+    border-color: #fcbc14;
+    color: white;
 }
 
 .cancel-submit-button {
