@@ -161,7 +161,7 @@ li:hover .fa-edit {
 }
 
 .button-high-priority:hover {
-    background-color: #990000;
+    background-color: #880000;
 }
 
 .button-medium-priority {
@@ -171,7 +171,7 @@ li:hover .fa-edit {
 }
 
 .button-medium-priority:hover {
-    background-color: #df6807;
+    background-color: #e66307;
 }
 
 .button-low-priority {
