@@ -42,3 +42,6 @@ $("input[type='text']").keypress(function(event) {
         });
     }
 });
+
+// Make radio buttons appear as if they've been clicked
+$(".clicked-radio-button").button('toggle')
