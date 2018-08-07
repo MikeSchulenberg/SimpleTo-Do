@@ -56,8 +56,16 @@ router.put("/:id", function(req, res) {
 
 // destroy todo route
 router.delete("/:id", function(req, res) {
-    console.log("TODO: finish 'delete todo' route");
-    res.redirect("/tasks");
+    Todo.findByIdAndRemove(req.params.id, function(err) {
+        if (err) {
+            console.log(err);
+            res.redirect("/tasks/:id");
+        }
+        
+        else {
+            res.redirect("/tasks");
+        }
+    });
 });
 
 module.exports = router;
