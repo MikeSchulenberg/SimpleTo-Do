@@ -38,15 +38,25 @@ router.get("/:id/edit", function(req, res) {
     });
 });
 
-// update todo route
+// update todo route - update a single todo in the DB
 router.put("/:id", function(req, res) {
-    console.log("TODO: finish 'update todo' route");
-    res.redirect("/tasks");
+    var title = req.body.title;
+    var priority = req.body.options;
+    
+    var updatedTodo = {title: title, priority: priority};
+    
+    Todo.findByIdAndUpdate(req.params.id, updatedTodo, function(err) {
+        if (err) {
+            console.log(err);
+        }
+        
+        res.redirect("/tasks");
+    });
 });
 
 // destroy todo route
 router.delete("/:id", function(req, res) {
-    console.log("TODO: finish 'delete campground' route");
+    console.log("TODO: finish 'delete todo' route");
     res.redirect("/tasks");
 });
 
