@@ -54,6 +54,10 @@ input {
     border: 3px solid rgba(0, 0, 0, 0);
 }
 
+.title-text {
+    color: #666;
+}
+
 input:focus {
     background: #fff;
     border: 3px solid #2980b9;

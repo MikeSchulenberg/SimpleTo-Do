@@ -28,7 +28,7 @@
                 <div class="task-body">
                     <%= todo.title %>
                 </div>
-                <a href="/todos/123/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>
+                <a href="/todos/<%= todo._id %>/edit"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>
             </li>
         <% }); %>
     </ul>

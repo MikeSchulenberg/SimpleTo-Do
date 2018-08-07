@@ -25,10 +25,17 @@ router.post("/", function(req, res) {
     })
 });
 
-// edit todo route
+// edit todo route - show form to edit a single todo
 router.get("/:id/edit", function(req, res) {
-     console.log("TODO: finish 'edit todo' route");
-     res.render("todos/edit");
+    Todo.findById(req.params.id, function(err, foundTodo) {
+        if (err) {
+            console.log(err);
+        }
+         
+        else {
+            res.render("todos/edit", {todo: foundTodo});
+        }
+    });
 });
 
 // update todo route
