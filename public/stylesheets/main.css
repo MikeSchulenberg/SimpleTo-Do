@@ -200,6 +200,10 @@ li:hover .fa-edit {
     color: white;
 }
 
+.cancel-submit-container {
+    padding-bottom: 20px
+}
+
 .cancel-submit-button {
     width: 76px;
 }
