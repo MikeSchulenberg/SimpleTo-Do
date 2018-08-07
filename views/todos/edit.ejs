@@ -36,23 +36,15 @@
                     </label>
             </div>
         </div>
-        <div class="text-center cancel-submit-container">
+        <div class="text-center button-cushion">
                 <a class="btn btn-primary cancel-submit-button" href="/tasks" >Cancel</a>
                 <button class="btn btn-primary cancel-submit-button">Submit</button>
         </div>
     </form>
+    
+    <form class="text-center button-cushion" action="/todos/<%= todo._id %>?_method=DELETE" method="POST">
+        <button class="btn btn-danger">Delete</button>
+    </form>
 </div>
-
-<!--<h1>Edit Task</h1>-->
-
-<!--<a class="btn btn-primary" href="/tasks">Cancel</a>-->
-
-<!--<form class="inline" action="/todos/123?_method=PUT" method="POST">-->
-<!--    <button class="btn btn-primary">Save</button>-->
-<!--</form>-->
-
-<!--<form action="/todos/123?_method=DELETE" method="POST">-->
-<!--    <button class="btn btn-danger">Delete</button>-->
-<!--</form>-->
 
 <% include ../partials/footer %>
