@@ -10,36 +10,30 @@
             <div class="btn-group btn-group-toggle radio-button-group" data-toggle="buttons">
                 <!-- If this is a High Priority todo, set the High Priority button as clicked -->
                 <% if (todo.priority === "high") { %>
-                    <label class="btn button-high-priority active clicked-radio-button">
-                        <input type="radio" name="options" id="option1" autocomplete="off" value="high" checked> High
-                    </label>
+                    <label class="btn button-high-priority clicked-radio-button">
                 <% } else { %>
                     <label class="btn button-high-priority">
+                <% } %>
                         <input type="radio" name="options" id="option1" autocomplete="off" value="high"> High
                     </label>
-                <% } %>
                 
                 <!-- If this is a Medium Priority todo, set the Medium Priority button as clicked -->
                 <% if (todo.priority === "medium") { %>
-                    <label class="btn button-medium-priority active clicked-radio-button">
-                        <input type="radio" name="options" id="option2" autocomplete="off" value="medium" checked> Medium
-                    </label>
+                    <label class="btn button-medium-priority clicked-radio-button">
                 <% } else { %>
                     <label class="btn button-medium-priority">
+                <% } %>
                         <input type="radio" name="options" id="option2" autocomplete="off" value="medium"> Medium
                     </label>
-                <% } %>
                 
                 <!-- If this is a Low Priority todo, set the Low Priority button as clicked -->
                 <% if (todo.priority === "low") { %>
-                    <label class="btn button-low-priority active clicked-radio-button">
-                        <input type="radio" name="options" id="option3" autocomplete="off" value="low" checked> Low
-                    </label>
+                    <label class="btn button-low-priority clicked-radio-button">
                 <% } else { %>
                     <label class="btn button-low-priority">
+                <% } %>
                         <input type="radio" name="options" id="option3" autocomplete="off" value="low"> Low
                     </label>
-                <% } %>
             </div>
         </div>
         <div class="text-center cancel-submit-container">
