@@ -9,7 +9,7 @@ router.get("/new", function(req, res) {
 
 // add new todo to the DB
 router.post("/", function(req, res) {
-    var title = req.body.title;
+    var title = req.sanitize(req.body.title);
     var priority = req.body.options;
     
     var newTodo = {title: title, priority: priority};
@@ -40,7 +40,7 @@ router.get("/:id/edit", function(req, res) {
 
 // update todo route - update a single todo in the DB
 router.put("/:id", function(req, res) {
-    var title = req.body.title;
+    var title = req.sanitize(req.body.title);
     var priority = req.body.options;
     
     var updatedTodo = {title: title, priority: priority};
