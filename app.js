@@ -10,6 +10,10 @@ app.use(methodOverride("_method"));
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended: true}));
 
+// init express-sanitizer
+var expressSanitizer = require("express-sanitizer");
+app.use(expressSanitizer());
+
 // init mongoose
 var mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost:27017/simple-to-do-test", {useNewUrlParser: true});
