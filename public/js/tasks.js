@@ -5,12 +5,13 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 });
 
-// Click on X to delete todo
+// Click on checkbox to delete todo
 $("ul").on("click", "input[type=checkbox]", function(event) {
-    $(this).parent().siblings(".task-body").toggleClass("completed");
-    $(this).parent().parent().fadeOut(500, function() {
-        $(this).remove();
+    $(this).parent().parent().siblings(".task-body").toggleClass("completed");
+    $(this).parent().parent().parent().fadeOut(500, function() {
+        $(this).children().children("#delete-todo-checkbox").submit();
     });
+    
     event.stopPropagation();    // prevent event bubbling
 });
 

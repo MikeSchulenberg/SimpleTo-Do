@@ -23,7 +23,9 @@
                 } %>
                 
                 <div class="task-left-control <%= priorityClass %>">
-                    <input type="checkbox">
+                    <form id="delete-todo-checkbox" action="/todos/<%= todo._id %>?_method=DELETE" method="POST">
+                        <input type="checkbox">
+                    </form>
                 </div>
                 <div class="task-body">
                     <%= todo.title %>
