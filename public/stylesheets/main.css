@@ -148,6 +148,14 @@ li:hover .fa-edit {
     opacity: 1;
 }
 
+.new-todo-form-hidden {
+    display: none;
+}
+
+.new-todo-form-visible {
+    display: inline;
+}
+
 .form-label {
     color: #2980b9;
     padding-left: 24px;

@@ -2,7 +2,32 @@
 
 <div id="container">
     <h1>To-Dos<i class="fa fa-plus"></i></h1>
-    <input type="text" placeholder="Add a new To-Do">
+    
+    <form action="/todos" method="POST">
+        <input id="new-todo-input" type="text submit" name="title" placeholder="Add a new To-Do">
+        <!--<span class="form-label">Priority:</span>-->
+        <div id="new-todo-form" class="new-todo-form-hidden">
+            <span class="form-label">Priority:</span>
+            <div class="radio-button-container">
+                <div class="btn-group btn-group-toggle radio-button-group" data-toggle="buttons">
+                    <label class="btn button-high-priority">
+                        <input type="radio" name="options" id="option1" autocomplete="off" value="high"> High
+                    </label>
+                    <label class="btn button-medium-priority clicked-radio-button">
+                        <input type="radio" name="options" id="option2" autocomplete="off" value="medium"> Medium
+                    </label>
+                    <label class="btn button-low-priority">
+                        <input type="radio" name="options" id="option3" autocomplete="off" value="low"> Low
+                    </label>
+                </div>
+            </div>
+            <div class="text-center button-bottom-cushion">
+                <!--<a class="btn btn-primary cancel-submit-button" href="/tasks" >Cancel</a>-->
+                <button id="cancel-new-todo" class="btn btn-primary cancel-submit-button" type="button">Cancel</button>
+                <button class="btn btn-primary cancel-submit-button">Submit</button>
+            </div>
+        </div>
+    </form>
 
     <ul>
         <% todos.forEach(function(todo) { %>
@@ -34,15 +59,6 @@
             </li>
         <% }); %>
     </ul>
-</div>
-
-<div>
-    <p>
-        <a class="btn btn-primary" href="/todos/new">Add New Task</a>
-    </p>
-    <p>
-        <a class="btn btn-primary" href="/todos/123/edit">Edit Task</a>
-    </p>
 </div>
 
 <% include ./partials/footer %>
