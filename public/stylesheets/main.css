@@ -148,11 +148,15 @@ li:hover .fa-edit {
     opacity: 1;
 }
 
-.new-todo-form-hidden {
+#new-todo-form {
+    background: #fff;
+}
+
+.new-todo-div-hidden {
     display: none;
 }
 
-.new-todo-form-visible {
+.new-todo-div-visible {
     display: inline;
 }
 

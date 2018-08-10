@@ -15,14 +15,14 @@ $("ul").on("click", "input[type=checkbox]", function(e) {
 
 // Unhide the 'new todo' form
 $("#new-todo-input").on("click", function(e) {
-    $(this).siblings("#new-todo-form").removeClass("new-todo-form-hidden");
-    $(this).siblings("#new-todo-form").addClass("new-todo-form-visible");
+    $(this).siblings("#new-todo-div").removeClass("new-todo-div-hidden");
+    $(this).siblings("#new-todo-div").addClass("new-todo-div-visible");
 });
 
 // Hide the 'new todo' form
 $("#cancel-new-todo").on("click", function(e) {
-    $(this).closest("form").find("#new-todo-form").removeClass("new-todo-form-visible");
-    $(this).closest("form").find("#new-todo-form").addClass("new-todo-form-hidden");
+    $(this).closest("form").find("#new-todo-div").removeClass("new-todo-div-visible");
+    $(this).closest("form").find("#new-todo-div").addClass("new-todo-div-hidden");
     $(this).closest("form").find("#new-todo-input").val("");
 });
 

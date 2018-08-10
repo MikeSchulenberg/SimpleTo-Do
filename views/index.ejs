@@ -3,10 +3,9 @@
 <div id="container">
     <h1>To-Dos<i class="fa fa-plus"></i></h1>
     
-    <form action="/todos" method="POST">
+    <form id="new-todo-form"action="/todos" method="POST">
         <input id="new-todo-input" type="text submit" name="title" placeholder="Add a new To-Do">
-        <!--<span class="form-label">Priority:</span>-->
-        <div id="new-todo-form" class="new-todo-form-hidden">
+        <div id="new-todo-div" class="new-todo-div-hidden">
             <span class="form-label">Priority:</span>
             <div class="radio-button-container">
                 <div class="btn-group btn-group-toggle radio-button-group" data-toggle="buttons">
@@ -22,7 +21,6 @@
                 </div>
             </div>
             <div class="text-center button-bottom-cushion">
-                <!--<a class="btn btn-primary cancel-submit-button" href="/tasks" >Cancel</a>-->
                 <button id="cancel-new-todo" class="btn btn-primary cancel-submit-button" type="button">Cancel</button>
                 <button class="btn btn-primary cancel-submit-button">Submit</button>
             </div>
