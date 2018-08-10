@@ -152,12 +152,8 @@ li:hover .fa-edit {
     background: #fff;
 }
 
-.new-todo-div-hidden {
+#new-todo-div {
     display: none;
-}
-
-.new-todo-div-visible {
-    display: inline;
 }
 
 .form-label {
