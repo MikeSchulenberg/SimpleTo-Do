@@ -156,6 +156,10 @@ li:hover .fa-edit {
     display: none;
 }
 
+.edit-todo-div {
+    display: none;
+}
+
 .form-label {
     color: #2980b9;
     padding-left: 24px;

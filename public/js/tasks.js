@@ -51,3 +51,9 @@ $("#submit-new-todo").on("click", function() {
 });
 
 //------------------------------------------------------------------------------
+
+// Unhide the 'edit' form for a single todo
+$("ul").on("click", ".edit-todo-toggle", function() {
+    $(this).closest("li").find(".task-container").prop("hidden", true);
+    $(this).closest("li").find(".edit-todo-div").fadeIn(500);
+});
