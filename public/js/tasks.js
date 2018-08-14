@@ -63,23 +63,21 @@ $("ul").on("click", ".edit-todo-toggle", function() {
 
 // Hide the 'edit' form for a single todo
 $("ul").on("click", ".cancel-edit-form", function() {
-    $(this).closest("li").find(".edit-todo-div").fadeOut(400, function() {
-        $(this).closest("li").find(".task-container").fadeIn(250, function() {
-            openEditTodoDiv = null;
-        });
-    });
+    hideEditTodoForm();
 });
 
 //------------------------------------------------------------------------------
 // FUNCTIONS
 //------------------------------------------------------------------------------
 
+// Hide the 'new todo' form
 var hideNewTodoForm = function() {
     $("#new-todo-div").fadeOut(500, function() {
         $("#new-todo-input").val("");
     });
 };
 
+// If an 'edit todo' form is currently visible, hide it
 var hideEditTodoForm = function(callback) {
     if (openEditTodoDiv !== null) {
         openEditTodoDiv.fadeOut(400, function() {
@@ -100,6 +98,7 @@ var hideEditTodoForm = function(callback) {
     }
 };
 
+// Submit a new todo
 var submitForm = function(thisObj) {
     thisObj.closest("form").find("#new-todo-input").prop("readonly", true);
     thisObj.closest("form").find("#new-todo-div").fadeOut(500, function() {
