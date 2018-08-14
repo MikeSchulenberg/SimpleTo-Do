@@ -1,5 +1,7 @@
 /* global $ */
 
+var openEditTodoDiv = null;
+
 // initialize tooltips
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
@@ -18,18 +20,85 @@ $(".clicked-radio-button").button('toggle')
 
 // Unhide the 'new todo' form
 $("#new-todo-input").on("click", function() {
+    // Hide any 'edit todo' forms that happen to have been left open
+    hideEditTodoForm();
+    
     $(this).siblings("#new-todo-div").fadeIn(500);
 });
 
 // Hide the 'new todo' form
 $("#cancel-new-todo").on("click", function() {
-    $(this).closest("form").find("#new-todo-div").fadeOut(500, function() {
-        $(this).closest("form").find("#new-todo-input").val("");
+    hideNewTodoForm();
+});
+
+// Subtmit a new todo when Enter is pressed in the text input
+$("#new-todo-input").on("keypress", function(e) {
+    if (e.which === 13) {
+        e.preventDefault();
+        submitForm($(this));
+    }
+});
+
+// Submit a new todo when the Submit button is clicked
+$("#submit-new-todo").on("click", function() {
+    submitForm($(this));
+});
+
+// Unhide the 'edit' form for a single todo
+$("ul").on("click", ".edit-todo-toggle", function() {
+    // Hide the 'new todo' form if it happens to have been left open
+    hideNewTodoForm();
+    
+    // Hide any 'edit todo' forms that happen to have been left open
+    var thisObj = $(this);
+    hideEditTodoForm(function() {
+        // Unhide the target 'edit todo' form
+        thisObj.closest("li").find(".task-container").fadeOut(250, function() {
+            thisObj.closest("li").find(".edit-todo-div").fadeIn(400, function() {
+                openEditTodoDiv = thisObj.closest("li").find(".edit-todo-div");
+            });
+        });
     });
 });
 
-/* Submit a new todo when Enter is pressed in the text input or when the Submit
-   is clicked. ---------------------------------------------------------------*/
+// Hide the 'edit' form for a single todo
+$("ul").on("click", ".cancel-edit-form", function() {
+    $(this).closest("li").find(".edit-todo-div").fadeOut(400, function() {
+        $(this).closest("li").find(".task-container").fadeIn(250, function() {
+            openEditTodoDiv = null;
+        });
+    });
+});
+
+//------------------------------------------------------------------------------
+// FUNCTIONS
+//------------------------------------------------------------------------------
+
+var hideNewTodoForm = function() {
+    $("#new-todo-div").fadeOut(500, function() {
+        $("#new-todo-input").val("");
+    });
+};
+
+var hideEditTodoForm = function(callback) {
+    if (openEditTodoDiv !== null) {
+        openEditTodoDiv.fadeOut(400, function() {
+            openEditTodoDiv.closest("li").find(".task-container").fadeIn(250, function() {
+                openEditTodoDiv = null;
+                
+                if (typeof callback === "function") {
+                    callback();
+                }
+            });
+        });
+    }
+    
+    else {
+        if (typeof callback === "function") {
+            callback();
+        }
+    }
+};
 
 var submitForm = function(thisObj) {
     thisObj.closest("form").find("#new-todo-input").prop("readonly", true);
@@ -38,34 +107,3 @@ var submitForm = function(thisObj) {
         thisObj.closest("form").submit();
     });
 };
-
-$("#new-todo-input").on("keypress", function(e) {
-    if (e.which === 13) {
-        e.preventDefault();
-        submitForm($(this));
-    }
-});
-
-$("#submit-new-todo").on("click", function() {
-    submitForm($(this));
-});
-
-//------------------------------------------------------------------------------
-
-// Unhide the 'edit' form for a single todo
-$("ul").on("click", ".edit-todo-toggle", function() {
-    $(this).closest("li").find(".task-container").fadeOut(250, function() {
-        $(this).closest("li").find(".edit-todo-div").fadeIn(400);
-    });
-    
-    
-    // $(this).closest("li").find(".task-container").prop("hidden", true);
-    // $(this).closest("li").find(".edit-todo-div").fadeIn(500);
-});
-
-// Hide the 'edit' form for a single todo
-$("ul").on("click", ".cancel-edit-form", function() {
-    $(this).closest("li").find(".edit-todo-div").fadeOut(400, function() {
-        $(this).closest("li").find(".task-container").fadeIn(250);
-    });
-});
