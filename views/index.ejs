@@ -59,11 +59,9 @@
                     <a class="edit-todo-toggle" href="#"><i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>
                 </div>    
                 
-                <!---->
-                
                 <div class="edit-todo-div">
-                    <form action="/todos/<%= todo._id %>?_method=PUT" method="POST">
-                        <input class="title-text" type="text submit" name="title" value="<%= todo.title %>">
+                    <form class="edit-todo-form" action="/todos/<%= todo._id %>?_method=PUT" method="POST">
+                        <input id="edit-todo-input" class="title-text" type="text submit" name="title" value="<%= todo.title %>">
                         <span class="form-label">Priority:</span>
                         <div class="radio-button-container">
                             <div class="btn-group btn-group-toggle radio-button-group" data-toggle="buttons">
@@ -97,9 +95,8 @@
                             </div>
                         </div>
                         <div class="text-center button-bottom-cushion">
-                                <!--<a class="btn btn-primary cancel-submit-button cancel-edit-form" href="/tasks" >Cancel</a>-->
-                                <button class="btn btn-primary cancel-submit-button cancel-edit-form" type="button">Cancel</button>
-                                <button class="btn btn-primary cancel-submit-button">Submit</button>
+                                <button class="btn btn-primary cancel-submit-button cancel-todo-update" type="button">Cancel</button>
+                                <button class="btn btn-primary cancel-submit-button submit-todo-update" type="button">Submit</button>
                         </div>
                     </form>
                     

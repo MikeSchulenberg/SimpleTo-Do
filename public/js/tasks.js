@@ -31,7 +31,7 @@ $("#cancel-new-todo").on("click", function() {
     hideNewTodoForm();
 });
 
-// Subtmit a new todo when Enter is pressed in the text input
+// Subtmit a new todo when Enter is pressed in the 'new todo' form's text input
 $("#new-todo-input").on("keypress", function(e) {
     if (e.which === 13) {
         e.preventDefault();
@@ -39,7 +39,7 @@ $("#new-todo-input").on("keypress", function(e) {
     }
 });
 
-// Submit a new todo when the Submit button is clicked
+// Submit a new todo when the Submit button in the 'new todo' form is clicked
 $("#submit-new-todo").on("click", function() {
     submitForm($(this));
 });
@@ -62,8 +62,21 @@ $("ul").on("click", ".edit-todo-toggle", function() {
 });
 
 // Hide the 'edit' form for a single todo
-$("ul").on("click", ".cancel-edit-form", function() {
+$("ul").on("click", ".cancel-todo-update", function() {
     hideEditTodoForm();
+});
+
+// Subtmit an updated todo when Enter is pressed in an 'edit todo' form's text input
+$("ul").on("click", "#edit-todo-input", function(e) {
+    if (e.which === 13) {
+        e.preventDefault();
+        submitUpdatedTodo($(this));
+    }
+});
+
+// Submit an updated todo when the Submit button in an 'edit todo' form is clicked
+$("ul").on("click", ".submit-todo-update", function() {
+    submitUpdatedTodo($(this));
 });
 
 //------------------------------------------------------------------------------
@@ -106,3 +119,20 @@ var submitForm = function(thisObj) {
         thisObj.closest("form").submit();
     });
 };
+
+// Submit an updated todo
+var submitUpdatedTodo = function(thisObj) {
+    thisObj.closest(".edit-todo-div").find("#edit-todo-input").prop("readonly", true);
+    thisObj.closest(".edit-todo-div").fadeOut(500, function() {
+        thisObj.closest(".edit-todo-div").find("#edit-todo-input").prop("readonly", false);
+        thisObj.closest(".edit-todo-div").find(".edit-todo-form").submit();
+    });
+};
+
+// var submitUpdatedTodo = function(thisObj) {
+//     thisObj.closest("form").find("#edit-todo-input").prop("readonly", true);
+//     thisObj.closest("form").find(".edit-todo-div").fadeOut(500, function() {
+//         thisObj.closest("form").find("#edit-todo-input").prop("readonly", false);
+//         thisObj.closest("form").submit();
+//     });
+// };
