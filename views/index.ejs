@@ -3,29 +3,7 @@
 <div id="container">
     <h1>To-Dos</h1>
     
-    <form action="/todos" method="POST">
-        <input id="new-todo-input" type="text submit" name="title" placeholder="Add a new To-Do">
-        <div id="new-todo-div">
-            <span class="form-label">Priority:</span>
-            <div class="radio-button-container">
-                <div class="btn-group btn-group-toggle radio-button-group" data-toggle="buttons">
-                    <label class="btn button-high-priority">
-                        <input type="radio" name="options" id="option1" autocomplete="off" value="high"> High
-                    </label>
-                    <label class="btn button-medium-priority clicked-radio-button">
-                        <input type="radio" name="options" id="option2" autocomplete="off" value="medium"> Medium
-                    </label>
-                    <label class="btn button-low-priority">
-                        <input type="radio" name="options" id="option3" autocomplete="off" value="low"> Low
-                    </label>
-                </div>
-            </div>
-            <div class="text-center button-bottom-cushion">
-                <button id="cancel-new-todo" class="btn btn-primary cancel-submit-button" type="button">Cancel</button>
-                <button class="btn btn-primary cancel-submit-button">Submit</button>
-            </div>
-        </div>
-    </form>
+    <% include ./partials/newTodoForm %>
 
     <ul>
         <% todos.forEach(function(todo) { %>
@@ -59,53 +37,8 @@
                     <i class="far fa-edit edit-todo-toggle" data-toggle="tooltip" data-placement="top" title="Edit"></i>
                 </div>    
                 
-                <div class="edit-todo-div">
-                    <form action="/todos/<%= todo._id %>?_method=PUT" method="POST">
-                        <input class="title-text edit-todo-input" type="text submit" name="title" value="<%= todo.title %>">
-                        <span class="form-label">Priority:</span>
-                        <div class="radio-button-container">
-                            <div class="btn-group btn-group-toggle radio-button-group" data-toggle="buttons">
-                                
-                                <!-- Determine which 'Priority' button should start in the clicked
-                                state based on the priority of the todo -->
-                                <% var highClicked = ""; %>
-                                <% var mediumClicked = ""; %>
-                                <% var lowClicked = ""; %>
-                                <% switch(todo.priority) {
-                                    case "high": %>
-                                        <% highClicked = "clicked-radio-button"; %>
-                                        <% break;
-                                    case "medium": %>
-                                        <% mediumClicked = "clicked-radio-button"; %>
-                                        <% break;
-                                    case "low": %>
-                                        <% lowClicked = "clicked-radio-button"; %>
-                                        <% break;
-                                } %>
-                                
-                                <label class="btn button-high-priority <%= highClicked %>">
-                                    <input type="radio" name="options" id="option1" autocomplete="off" value="high"> High
-                                </label>
-                                <label class="btn button-medium-priority <%= mediumClicked %>">
-                                    <input type="radio" name="options" id="option2" autocomplete="off" value="medium"> Medium
-                                </label>
-                                <label class="btn button-low-priority <%= lowClicked %>">
-                                    <input type="radio" name="options" id="option3" autocomplete="off" value="low"> Low
-                                </label>
-                            </div>
-                        </div>
-                        <div class="text-center button-bottom-cushion">
-                                <button class="btn btn-primary cancel-submit-button cancel-todo-update" type="button">Cancel</button>
-                                <button class="btn btn-primary cancel-submit-button">Submit</button>
-                        </div>
-                    </form>
-                    
-                    <hr class="button-separator">
-                    
-                    <form class="text-center button-top-cushion button-bottom-cushion" action="/todos/<%= todo._id %>?_method=DELETE" method="POST">
-                        <button class="btn btn-danger">Delete</button>
-                    </form>
-                </div>
+                <% include ./partials/editTodoForm %>
+                
             </li>
         <% }); %>
     </ul>
