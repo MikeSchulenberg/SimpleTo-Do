@@ -38,7 +38,8 @@ li {
     margin-top: 5px;
 }
 
-input {
+#new-todo-input,
+.edit-todo-input {
     font-size: 18px;
     color: #2980b9;
     background: #fff;
@@ -81,6 +82,7 @@ input[type=checkbox] {
     height: 1em;
     border: 1px solid rgba(0, 0, 0, 0);
     vertical-align: -3px;
+    background: #fff;
 }
 
 input[type=checkbox]:hover {
@@ -97,8 +99,9 @@ input[type=checkbox]::before {
     position: absolute;
     font-size: 1.2em;
     right: 0;
-    top: -0.53em;
+    top: -0.66em;
     visibility: hidden;
+    color: #2980b9;
 }
 
 input[type=checkbox]:checked::before {
