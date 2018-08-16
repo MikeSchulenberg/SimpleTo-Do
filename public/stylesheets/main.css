@@ -46,6 +46,7 @@ li {
     width: 100%;
     padding: 13px 13px 13px 20px;
     box-sizing: border-box;
+    height: 60px;
 
     /* gets rid of gap and prevents lis from shifting downward
     when focused */
