@@ -145,6 +145,10 @@ li:hover .fa-edit {
     opacity: 1;
 }
 
+.fa-edit:hover {
+    color: #2980b9;
+}
+
 #new-todo-div {
     display: none;
     background: #fff;
@@ -229,9 +233,4 @@ li:hover .fa-edit {
     background-image: -moz-linear-gradient(left, #ffffff, #2980b9, #ffffff);
     background-image: -o-linear-gradient(left, #ffffff, #2980b9, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #2980b9, #ffffff); 
-}
-
-/* TEMP */
-.fa-plus {
-    float: right;
 }
