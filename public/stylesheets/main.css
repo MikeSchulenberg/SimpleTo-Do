@@ -5,13 +5,12 @@ body {
     background: linear-gradient(to left, #EAECC6, #2BC0E4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-#container {
+.master-container {
     width: 450px;
     margin: 100px auto;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
-#container h1 {
+.master-container h1 {
     background: #2980b9;
     color: white;
     margin: 0;
@@ -48,9 +47,23 @@ li {
     box-sizing: border-box;
     height: 60px;
 
+    /*gets rid of gap and prevents lis from shifting downward
+    when focused */
+    border: 3px solid rgba(0, 0, 0, 0);
+}
+
+.user-info-input {
+    font-size: 18px;
+    color: #2980b9;
+    width: 100%;
+    padding: 13px 13px 13px 20px;
+    box-sizing: border-box;
+    height: 60px;
     /* gets rid of gap and prevents lis from shifting downward
     when focused */
     border: 3px solid rgba(0, 0, 0, 0);
+    
+    margin-top: 5px;
 }
 
 #new-todo-input:hover, 
@@ -226,7 +239,7 @@ li:hover .fa-edit {
 }
 
 .cancel-submit-button {
-    width: 76px;
+    width: 80px;
 }
 
 .button-separator {

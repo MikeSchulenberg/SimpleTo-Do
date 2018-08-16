@@ -1,9 +1,18 @@
 <% include ./partials/header %>
 
-<h1>Sign Up</h1>
-
-<form action="/register" method="POST">
-    <button class="btn btn-primary">Sign Up</button>
-</form>
+<div class="master-container">
+    <h1>Sign Up</h1>
+    
+    <form action="/register" method="POST">
+        <input class="user-info-input" type="text" name="username" placeholder="username">
+        <input class="user-info-input" type="password" name="password" placeholder="password">
+        
+        <div class="text-center button-top-cushion button-bottom-cushion">
+            <a class="btn btn-primary cancel-submit-button" href="/">Cancel</a>
+            <button class="btn btn-primary cancel-submit-button">Sign Up</button>
+        </div>
+    </form>
+    
+</div>
 
 <% include ./partials/footer %>
