@@ -41,7 +41,7 @@ li {
 input {
     font-size: 18px;
     color: #2980b9;
-    background: #f7f7f7;
+    background: #fff;
     width: 100%;
     padding: 13px 13px 13px 20px;
     box-sizing: border-box;
@@ -51,14 +51,16 @@ input {
     border: 3px solid rgba(0, 0, 0, 0);
 }
 
-.title-text {
-    color: #666;
-}
-
-input:focus {
-    background: #fff;
+#new-todo-input:hover, 
+#new-todo-input:focus,
+.edit-todo-input:hover,
+.edit-todo-input:focus {
     border: 3px solid #2980b9;
     outline: none;
+}
+
+.title-text {
+    color: #666;
 }
 
 .task-left-control {
