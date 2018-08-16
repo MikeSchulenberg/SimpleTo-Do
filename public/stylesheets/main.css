@@ -34,25 +34,9 @@ li {
     width: 100%;
     min-height: 40px;
     height: auto;
-    margin-top: 5px;
 }
 
-#new-todo-input,
-.edit-todo-input {
-    font-size: 18px;
-    color: #2980b9;
-    background: #fff;
-    width: 100%;
-    padding: 13px 13px 13px 20px;
-    box-sizing: border-box;
-    height: 60px;
-
-    /*gets rid of gap and prevents lis from shifting downward
-    when focused */
-    border: 3px solid rgba(0, 0, 0, 0);
-}
-
-.user-info-input {
+.standard-text-input {
     font-size: 18px;
     color: #2980b9;
     width: 100%;
@@ -62,16 +46,16 @@ li {
     /* gets rid of gap and prevents lis from shifting downward
     when focused */
     border: 3px solid rgba(0, 0, 0, 0);
-    
-    margin-top: 5px;
 }
 
-#new-todo-input:hover, 
-#new-todo-input:focus,
-.edit-todo-input:hover,
-.edit-todo-input:focus {
+.standard-text-input:hover,
+.standard-text-input:focus {
     border: 3px solid #2980b9;
     outline: none;
+}
+
+.margin-top-5px {
+    margin-top: 5px;
 }
 
 .title-text {
