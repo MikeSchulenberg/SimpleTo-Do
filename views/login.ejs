@@ -1,9 +1,17 @@
 <% include ./partials/header %>
 
-<h1>Log In</h1>
-
-<form action="/login" method="POST">
-    <button class="btn btn-primary">Log In</button>
-</form>
+<div class="master-container">
+    <h1>Log In</h1>
+    
+    <form action="/login" method="POST">
+        <input class="standard-text-input margin-top-5px" type="text" name="username" placeholder="username">
+        <input class="standard-text-input margin-top-5px" type="password" name="password" placeholder="password">
+        
+        <div class="text-center button-top-cushion button-bottom-cushion">
+            <a class="btn btn-primary cancel-submit-button" href="/">Cancel</a>
+            <button class="btn btn-primary cancel-submit-button">Log In</button>
+        </div>
+    </form>
+</div>
 
 <% include ./partials/footer %>

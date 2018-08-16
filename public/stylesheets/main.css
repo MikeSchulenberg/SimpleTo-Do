@@ -43,6 +43,7 @@ li {
     padding: 13px 13px 13px 20px;
     box-sizing: border-box;
     height: 60px;
+    
     /* gets rid of gap and prevents lis from shifting downward
     when focused */
     border: 3px solid rgba(0, 0, 0, 0);
