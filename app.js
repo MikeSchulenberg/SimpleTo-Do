@@ -18,9 +18,19 @@ app.use(expressSanitizer());
 var mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost:27017/simple-to-do-test", {useNewUrlParser: true});
 
+// init passport
+var passport        = require("passport"),
+    localStrategy   = require("passport-local");
+    
+// init models
+var User = require("./models/user");
+
 // seed the DB with data
 var seedDB = require("./DBseeds.js");
 seedDB();
+
+// configure passport
+
 
 // configure other stuff
 app.set("view engine", "ejs");
