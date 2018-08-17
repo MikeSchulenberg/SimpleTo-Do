@@ -29,12 +29,29 @@ var User = require("./models/user");
 var seedDB = require("./DBseeds.js");
 seedDB();
 
-// configure passport
+// configure passport: start ---------------------------------------------------
 
+app.use(require("express-session")({
+    secret: "The octopus is a smart and wily creature of the deep",
+    resave: false,
+    saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new localStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+// configure passport: end -----------------------------------------------------
 
 // configure other stuff
 app.set("view engine", "ejs");
 app.use(express.static("public"));
+app.use(function(req, res, next) {
+    res.locals.currentUser = req.user;
+    next();
+});
 
 // init routes
 var indexRoutes = require("./routes/index"),
