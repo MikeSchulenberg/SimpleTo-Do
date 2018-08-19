@@ -43,6 +43,13 @@ router.post("/login", passport.authenticate("local",
         function(req, res) {
 });
 
+// log out the current user
+router.get("/logout", function(req, res) {
+    req.logout();
+    req.flash("success", "You are logged out.");
+    res.redirect("/");
+});
+
 // show all tasks
 router.get("/tasks", function(req, res) {
     Todo.find({}, function(err, allTodos) {
