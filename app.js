@@ -31,7 +31,7 @@ var User = require("./models/user");
 
 // seed the DB with data
 var seedDB = require("./DBseeds.js");
-seedDB();
+// seedDB();
 
 // configure passport: start ---------------------------------------------------
 

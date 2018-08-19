@@ -52,7 +52,7 @@ router.get("/logout", function(req, res) {
 
 // show all tasks
 router.get("/tasks", function(req, res) {
-    Todo.find({}, function(err, allTodos) {
+    Todo.find({"owner.id": req.user._id}, function(err, allTodos) {
         if (err) {
             console.log(err);
         }

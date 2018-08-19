@@ -14,12 +14,14 @@ router.post("/", function(req, res) {
     
     var newTodo = {title: title, priority: priority};
     
-    Todo.create(newTodo, function(err) {
+    Todo.create(newTodo, function(err, todo) {
         if (err) {
             console.log(err);
         }
         
         else {
+            todo.owner.id = req.user._id;
+            todo.save();
             res.redirect("/tasks");
         }
     })
