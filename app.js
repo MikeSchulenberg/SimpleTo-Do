@@ -10,6 +10,10 @@ app.use(methodOverride("_method"));
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended: true}));
 
+// init connect-flash
+var flash = require("connect-flash");
+app.use(flash());
+
 // init express-sanitizer
 var expressSanitizer = require("express-sanitizer");
 app.use(expressSanitizer());
@@ -50,6 +54,8 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(function(req, res, next) {
     res.locals.currentUser = req.user;
+    res.locals.error = req.flash("error");
+    res.locals.success = req.flash("success");
     next();
 });
 
