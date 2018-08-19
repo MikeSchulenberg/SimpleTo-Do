@@ -11,17 +11,16 @@ router.get("/new", function(req, res) {
 router.post("/", function(req, res) {
     var title = req.sanitize(req.body.title);
     var priority = req.body.options;
+    var ownerId = req.user._id;
     
-    var newTodo = {title: title, priority: priority};
+    var newTodo = {title: title, priority: priority, "owner.id": ownerId};
     
-    Todo.create(newTodo, function(err, todo) {
+    Todo.create(newTodo, function(err) {
         if (err) {
             console.log(err);
         }
         
         else {
-            todo.owner.id = req.user._id;
-            todo.save();
             res.redirect("/tasks");
         }
     })
