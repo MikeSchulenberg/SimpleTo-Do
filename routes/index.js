@@ -35,9 +35,12 @@ router.get("/login", function(req, res) {
 });
 
 // handle login logic
-router.post("/login", function(req, res) {
-    console.log("TODO: handle login logic");
-    res.redirect("/tasks"); 
+router.post("/login", passport.authenticate("local",
+    {
+        successRedirect: "/tasks",
+        failureRedirect: "/login"
+    }),
+        function(req, res) {
 });
 
 // show all tasks
