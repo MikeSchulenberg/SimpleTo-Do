@@ -17,12 +17,16 @@
                 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item dropdown bg-primary">
-                            <a class="nav-link dropdown-toggle py-0" href="#" id="navbarDropdownMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Username</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenu">
-                                <a class="dropdown-item" href="#">Log Out</a>
-                            </div>
-                        </li>
+                        <% if (currentUser) { %>
+                            <li class="nav-item dropdown bg-primary">
+                                <a class="nav-link dropdown-toggle py-0" href="#" id="navbarDropdownMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <%= currentUser.username %>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenu">
+                                    <a class="dropdown-item" href="#">Log Out</a>
+                                </div>
+                            </li>
+                        <% } %>
                     </ul>
                 </div>
             </div>
