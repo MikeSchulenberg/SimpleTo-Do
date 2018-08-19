@@ -11,6 +11,10 @@ body {
     vertical-align: -3.5px;
 }
 
+#alert-container {
+    margin-top: 20px;
+}
+
 .master-container {
     width: 450px;
     margin: 100px auto;

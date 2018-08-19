@@ -1,6 +1,6 @@
-var express = require("express");
-var router = express.Router();
-var Todo = require("../models/todo");
+var express = require("express"),
+    router  = express.Router(),
+    Todo    = require("../models/todo");
 
 // show form to create a new todo
 router.get("/new", function(req, res) {

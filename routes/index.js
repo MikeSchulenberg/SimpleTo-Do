@@ -1,6 +1,8 @@
-var express = require("express");
-var router = express.Router();
-var Todo = require("../models/todo");
+var express     = require("express"),
+    router      = express.Router(),
+    passport    = require("passport"),
+    Todo        = require("../models/todo"),
+    User        = require("../models/user");
 
 router.get("/", function(req, res) {
     res.render("landing"); 
@@ -13,8 +15,18 @@ router.get("/register", function(req, res) {
 
 // handle registration logic
 router.post ("/register", function(req, res) {
-    console.log("TODO: handle user registration logic");
-    res.redirect("/tasks");
+    var newUser = new User({username: req.body.username});
+    User.register(newUser, req.body.password, function(err, user) {
+        if (err) {
+            req.flash("error", err.message);
+            return res.redirect("/");
+        }
+        
+        passport.authenticate("local")(req, res, function() {
+            req.flash("success", "Welcome, " + user.username + "!");
+            res.redirect("/tasks");
+        });
+    });
 });
 
 // show login form
