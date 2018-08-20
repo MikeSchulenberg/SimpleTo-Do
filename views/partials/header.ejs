@@ -16,8 +16,8 @@
                 </button>
                 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-                        <% if (currentUser) { %>
+                    <% if (currentUser) { %>
+                        <ul class="navbar-nav ml-auto">
                             <li class="nav-item dropdown bg-primary">
                                 <a class="nav-link dropdown-toggle py-0" href="#" id="navbarDropdownMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <%= currentUser.username %>
@@ -26,16 +26,20 @@
                                     <a class="dropdown-item" href="/logout">Log Out</a>
                                 </div>
                             </li>
+                        </ul>
                         <% } else if (page === "register") { %>
-                            <li class="nav-item bg-primary">
-                                <a class="nav-link py-0" href="/login">Log In</a>
-                            </li>
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item bg-primary">
+                                    <a class="nav-link py-0" href="/login">Log In</a>
+                                </li>
+                            </ul>
                         <% } else if (page === "login") {%>
-                            <li class="nav-item bg-primary">
-                                <a class="nav-link py-0" href="/register">Sign Up</a>
-                            </li>
-                        <% } %>
-                    </ul>
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item bg-primary">
+                                    <a class="nav-link py-0" href="/register">Sign Up</a>
+                                </li>
+                            </ul>
+                    <% } %>
                 </div>
             </div>
         </nav>
