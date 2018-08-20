@@ -11,7 +11,7 @@ router.get("/", function(req, res) {
 
 // show account registration form
 router.get("/register", function(req, res) {
-     res.render("register");
+     res.render("register", {page: "register"});
 });
 
 // handle registration logic
@@ -33,7 +33,7 @@ router.post ("/register", function(req, res) {
 
 // show login form
 router.get("/login", function(req, res) {
-    res.render("login"); 
+    res.render("login", {page: "login"}); 
 });
 
 // handle login logic
@@ -61,7 +61,7 @@ router.get("/tasks", middleware.isLoggedIn, function(req, res) {
         }
         
         else {
-            res.render("index", {todos: foundTodos});
+            res.render("index", {todos: foundTodos, page: "index"});
         }
     })
 });
