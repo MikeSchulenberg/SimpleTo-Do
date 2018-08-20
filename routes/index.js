@@ -55,13 +55,13 @@ router.get("/logout", function(req, res) {
 
 // show all tasks
 router.get("/tasks", middleware.isLoggedIn, function(req, res) {
-    Todo.find({"owner.id": req.user._id}, function(err, allTodos) {
+    Todo.find({"owner.id": req.user._id}, function(err, foundTodos) {
         if (err) {
             console.log(err);
         }
         
         else {
-            res.render("index", {todos: allTodos});
+            res.render("index", {todos: foundTodos});
         }
     })
 });
