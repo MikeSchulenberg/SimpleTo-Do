@@ -15,7 +15,8 @@ router.get("/register", function(req, res) {
 
 // handle registration logic
 router.post ("/register", function(req, res) {
-    var newUser = new User({username: req.body.username});
+    var username = req.sanitize(req.body.username);
+    var newUser = new User({username: username});
     User.register(newUser, req.body.password, function(err, user) {
         if (err) {
             req.flash("error", err.message);
@@ -38,7 +39,8 @@ router.get("/login", function(req, res) {
 router.post("/login", passport.authenticate("local",
     {
         successRedirect: "/tasks",
-        failureRedirect: "/login"
+        failureRedirect: "/login",
+        failureFlash: true
     }),
         function(req, res) {
 });
