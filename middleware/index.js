@@ -9,4 +9,12 @@ middlewareObj.isLoggedIn = function isLoggedIn(req, res, next) {
     res.redirect("/");
 };
 
+middlewareObj.isNotLoggedIn = function isNotLoggedIn(req, res, next) {
+    if (!req.isAuthenticated()) {
+        return next();
+    }
+    
+    res.redirect("/tasks");
+};
+
 module.exports = middlewareObj;

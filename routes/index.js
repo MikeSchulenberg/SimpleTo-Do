@@ -5,12 +5,12 @@ var express     = require("express"),
     Todo        = require("../models/todo"),
     User        = require("../models/user");
 
-router.get("/", function(req, res) {
+router.get("/", middleware.isNotLoggedIn, function(req, res) {
     res.render("landing"); 
 });
 
 // show account registration form
-router.get("/register", function(req, res) {
+router.get("/register", middleware.isNotLoggedIn, function(req, res) {
      res.render("register", {page: "register"});
 });
 
@@ -32,7 +32,7 @@ router.post ("/register", function(req, res) {
 });
 
 // show login form
-router.get("/login", function(req, res) {
+router.get("/login", middleware.isNotLoggedIn, function(req, res) {
     res.render("login", {page: "login"}); 
 });
 
