@@ -5,7 +5,7 @@ var express     = require("express"),
     Todo        = require("../models/todo"),
     User        = require("../models/user");
 
-router.get("/", middleware.isNotLoggedIn, function(req, res) {
+router.get("/", function(req, res) {
     res.render("landing"); 
 });
 
