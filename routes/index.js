@@ -1,6 +1,7 @@
 var express     = require("express"),
     router      = express.Router(),
     passport    = require("passport"),
+    middleware  = require("../middleware"),
     Todo        = require("../models/todo"),
     User        = require("../models/user");
 
@@ -53,7 +54,7 @@ router.get("/logout", function(req, res) {
 });
 
 // show all tasks
-router.get("/tasks", function(req, res) {
+router.get("/tasks", middleware.isLoggedIn, function(req, res) {
     Todo.find({"owner.id": req.user._id}, function(err, allTodos) {
         if (err) {
             console.log(err);
