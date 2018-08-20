@@ -32,7 +32,7 @@ var User = require("./models/user");
 // configure passport: start ---------------------------------------------------
 
 app.use(require("express-session")({
-    secret: "The octopus is a smart and wily creature of the deep",
+    secret: require('crypto').randomBytes(64).toString('hex'),
     resave: false,
     saveUninitialized: false
 }));
@@ -64,5 +64,5 @@ app.use("/todos", todoRoutes);
 //------------------------------------------------------------------------------
 
 app.listen(process.env.PORT, process.env.IP, function() {
-    console.log("Server is running"); 
+    console.log("Server is running");
 });
