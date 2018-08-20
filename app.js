@@ -29,10 +29,6 @@ var passport        = require("passport"),
 // init models
 var User = require("./models/user");
 
-// seed the DB with data
-var seedDB = require("./DBseeds.js");
-// seedDB();
-
 // configure passport: start ---------------------------------------------------
 
 app.use(require("express-session")({
