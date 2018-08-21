@@ -139,11 +139,6 @@ input[type=checkbox]:checked::before {
     vertical-align: bottom;
 }
 
-.completed {
-    color: gray;
-    text-decoration: line-through;
-}
-
 .fa-edit {
     float: right;
     margin-top: 11px;

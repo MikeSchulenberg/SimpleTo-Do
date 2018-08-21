@@ -9,10 +9,7 @@ $(function () {
 
 // Delete a todo when its checkbox is clicked
 $("ul").on("click", "input[type=checkbox]", function() {
-    $(this).closest("li").find(".task-body").toggleClass("completed");
-    $(this).closest("li").fadeOut(500, function() {
-        $(this).find("#delete-todo-checkbox").submit();
-    });
+    $(this).closest("#delete-todo-checkbox").submit();
 });
 
 // Make radio buttons appear as if they've been clicked
