@@ -1,4 +1,4 @@
-/* global $ */
+/* global $ bootbox */
 
 var openEditTodoDiv = null;
 
@@ -51,6 +51,30 @@ $("ul").on("click", ".edit-todo-toggle", function() {
 // Hide the 'edit' form for a single todo
 $("ul").on("click", ".cancel-todo-update", function() {
     hideEditTodoForm();
+});
+
+// Request user confirmation to delete a single todo
+$("ul").on("click", ".delete-todo-button", function() {
+    var thisObj = $(this);
+    
+    bootbox.confirm({
+        message: "Are you sure you want to delete this to-do?", 
+        buttons: {
+            confirm: {
+                label: "Yes",
+                className: "btn-danger"
+            },
+            
+            cancel: {
+                label: "No",
+                className: "btn-primary"
+            }
+        },
+        
+        callback: function() {
+            thisObj.closest(".edit-todo-div").find(".delete-todo-form").submit();
+        }
+    });
 });
 
 //------------------------------------------------------------------------------
