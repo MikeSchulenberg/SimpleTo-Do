@@ -17,7 +17,7 @@ router.get("/register", middleware.isNotLoggedIn, function(req, res) {
 // handle registration logic
 router.post ("/register", function(req, res) {
     var username = req.sanitize(req.body.username);
-    var newUser = new User({username: username});
+    var newUser = new User({username: username, completedTasks: 0, achievementPoints: 0});
     User.register(newUser, req.body.password, function(err, user) {
         if (err) {
             req.flash("error", err.message);
