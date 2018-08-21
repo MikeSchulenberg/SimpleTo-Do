@@ -10,7 +10,7 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="/"><i class="far fa-check-square"></i>Simple To-Do</a>
+                <a class="navbar-brand" href="/"><i class="fas fa-tasks"></i>Simple To-Do</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -28,9 +28,9 @@
                             </li>
                         </ul>
                         
-                        <div class="d-flex flex-column bd-highlight">
-                            <div class="bd-highlight">Completed Tasks: <%= currentUser.completedTasks %></div>
-                            <div class="bd-highlight">Achievement Points: <%= currentUser.achievementPoints %></div>
+                        <div class="d-flex flex-column bd-highlight user-stats ml-3">
+                            <div class="bd-highlight"><i class="far fa-check-square mr-2"></i>Completed Tasks: <%= currentUser.completedTasks %></div>
+                            <div class="bd-highlight"><i class="fas fa-trophy mr-2"></i>Achievement Points: <%= currentUser.achievementPoints %></div>
                         </div>
                         
                         <% } else if (page === "register") { %>
