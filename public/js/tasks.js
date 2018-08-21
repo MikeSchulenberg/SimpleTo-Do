@@ -68,8 +68,10 @@ $("ul").on("click", ".delete-todo-button", function() {
             }
         },
         
-        callback: function() {
-            thisObj.closest(".edit-todo-div").find(".delete-todo-form").submit();
+        callback: function(result) {
+            if (result) {
+                thisObj.closest(".edit-todo-div").find(".delete-todo-form").submit();
+            }
         }
     });
 });
