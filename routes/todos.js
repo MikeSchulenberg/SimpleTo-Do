@@ -58,19 +58,6 @@ router.put("/:id", function(req, res) {
 
 // destroy todo route
 router.delete("/:id", function(req, res) {
-    // Was the todo marked as complete by using its checkbox?
-    // if (req.xhr) {
-    //     // console.log(req.xhr.data);
-    //     req.on("data", function(data) {
-    //         console.log(data);
-    //     });
-    // }
-    
-    // if (req.body.taskcheckbox) {
-    //     console.log("has taskcheckbox");
-    //     updateUserStats(req);
-    // }
-    
     Todo.findByIdAndRemove(req.params.id, function(err, todo) {
         if (err) {
             console.log(err);
@@ -93,8 +80,6 @@ Achievement Points based on the priority of a completed todo. */
 router.post("/updateUserStats", function(req, res) {
     var completedTasks = req.user.completedTasks + 1;
     var achievementPoints = req.user.achievementPoints;
-    
-    // console.log(req.body.priority);
     
     switch (req.body.priority) {
         case "high":
@@ -119,64 +104,5 @@ router.post("/updateUserStats", function(req, res) {
         }
     });
 });
-
-// router.post("/updateUserStats", function(req, res) {
-//     console.log("/updateUserStats POST route reached");
-//     // console.log(req.body.id);
-    
-//     var completedTasks = req.user.completedTasks + 1;
-    
-//     var updatedUser = {completedTasks: completedTasks};
-//     User.findByIdAndUpdate(req.user._id, updatedUser, function(err) {
-//         if (err) {
-//             console.log(err);
-//         }
-        
-//         else {
-//             console.log("user update successful");
-//             res.redirect("/tasks");
-//         }
-//     });
-// });
-
-//------------------------------------------------------------------------------
-// FUNCTIONS
-//------------------------------------------------------------------------------
-
-/* Increment the number of tasks completed by the user. Award a number of
-Achievement Points based on the priority of a completed todo. */
-// function updateUserStats(req) {
-//     var completedTasks = req.user.completedTasks + 1;
-//     var achievementPoints = req.user.achievementPoints;
-    
-//     Todo.findById(req.params.id, function(err, todo) {
-//         if (err) {
-//             console.log(err);
-//         }
-        
-//         else {
-//             switch (todo.priority) {
-//                 case "high":
-//                     achievementPoints += 3;
-//                     break;
-//                 case "medium":
-//                     achievementPoints += 2;
-//                     break;
-//                 case "low":
-//                     achievementPoints += 1;
-//                     break;
-//             }
-            
-//             var updatedUser = { completedTasks: completedTasks, achievementPoints: achievementPoints};
-//             User.findByIdAndUpdate(req.user._id, updatedUser, function(err) {
-//                 if (err) {
-//                     console.log(err);
-//                 }
-//             });
-//         }
-//     });
-// }
-
-//------------------------------------------------------------------------------
 
 module.exports = router;
