@@ -63,14 +63,19 @@ router.delete("/:id", function(req, res) {
         updateUserStats(req);
     }
     
-    Todo.findByIdAndRemove(req.params.id, function(err) {
+    Todo.findByIdAndRemove(req.params.id, function(err, todo) {
         if (err) {
             console.log(err);
-            res.redirect("/tasks/:id");
         }
         
         else {
-            res.redirect("/tasks");
+            if (req.xhr) {
+                res.json(todo);
+            }
+            
+            else {
+                res.redirect("/tasks");
+            }
         }
     });
 });

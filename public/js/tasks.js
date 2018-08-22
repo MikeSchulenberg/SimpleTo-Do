@@ -12,6 +12,21 @@ $("ul").on("click", "input[type=checkbox]", function() {
     $(this).closest(".delete-todo-checkbox").submit();
 });
 
+//
+$("ul").on("submit", ".delete-todo-checkbox", function(e) {
+    e.preventDefault();
+    var actionUrl = $(this).attr("action");
+    $itemToDelete = $(this).closest("li");
+    $.ajax({
+        url: actionUrl,
+        type: "DELETE",
+        itemToDelete: $itemToDelete,
+        success: function(data) {
+            this.itemToDelete.remove();
+        }
+    });
+});
+
 // Make radio buttons appear as if they've been clicked
 $(".clicked-radio-button").button('toggle')
 
