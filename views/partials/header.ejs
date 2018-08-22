@@ -28,9 +28,11 @@
                             </li>
                         </ul>
                         
-                        <div class="d-flex flex-column bd-highlight user-stats ml-3">
-                            <div class="bd-highlight"><i class="far fa-check-square mr-2"></i>Completed Tasks: <%= currentUser.completedTasks %></div>
-                            <div class="bd-highlight"><i class="fas fa-trophy mr-2"></i>Achievement Points: <%= currentUser.achievementPoints %></div>
+                        <div id="user-stats-container">
+                            <div id="user-stats" class="d-flex flex-column bd-highlight ml-3">
+                                <div class="bd-highlight"><i class="far fa-check-square mr-2"></i>Completed Tasks: <%= currentUser.completedTasks %></div>
+                                <div class="bd-highlight"><i class="fas fa-trophy mr-2"></i>Achievement Points: <%= currentUser.achievementPoints %></div>
+                            </div>
                         </div>
                         
                         <% } else if (page === "register") { %>

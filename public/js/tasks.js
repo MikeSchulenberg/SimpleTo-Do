@@ -21,8 +21,12 @@ $("ul").on("submit", ".delete-todo-checkbox", function(e) {
         url: actionUrl,
         type: "DELETE",
         itemToDelete: $itemToDelete,
+        data: {
+            isCheckbox: true
+        },
         success: function(data) {
             this.itemToDelete.remove();
+            updateUserStats(data);
         }
     });
 });
@@ -120,4 +124,32 @@ var hideEditTodoForm = function(callback) {
             callback();
         }
     }
+};
+
+/* Send server request to update user stats such as number of Tasks Completed 
+and Achievement Points */
+var updateUserStats = function(data) {
+    var priority = data.priority;
+    var userStats = $("#user-stats").serialize();
+    $originalItem = $("#user-stats-container");
+    
+    $.ajax({
+        url: "/todos/updateUserStats",
+        data: {
+            priority: priority,
+            userStats
+        },
+        type: "POST",
+        originalItem: $originalItem,
+        success: function(data) {
+            this.originalItem.html(
+                `
+                <div id="user-stats" class="d-flex flex-column bd-highlight ml-3">
+                    <div class="bd-highlight"><i class="far fa-check-square mr-2"></i>Completed Tasks: ${data.completedTasks}</div>
+                    <div class="bd-highlight"><i class="fas fa-trophy mr-2"></i>Achievement Points: ${data.achievementPoints}</div>
+                </div>
+                `
+            )
+        }
+    })
 };
