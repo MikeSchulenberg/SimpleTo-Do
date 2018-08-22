@@ -25,7 +25,7 @@
                 
                 <div class="task-container">    
                     <div class="task-left-control <%= priorityClass %>">
-                        <form id="delete-todo-checkbox" action="/todos/<%= todo._id %>?_method=DELETE" method="POST">
+                        <form class="delete-todo-checkbox" action="/todos/<%= todo._id %>?_method=DELETE" method="POST">
                             <input type="checkbox" name="taskcheckbox">
                         </form>
                     </div>
