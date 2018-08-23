@@ -1,5 +1,5 @@
 <div class="edit-todo-div">
-    <form action="/todos/<%= todo._id %>?_method=PUT" method="POST">
+    <form class="edit-todo-form" action="/todos/<%= todo._id %>?_method=PUT" method="POST">
         <input class="title-text standard-text-input" type="text submit" name="title" value="<%= todo.title %>">
         <span class="form-label">Priority:</span>
         <div class="radio-button-container">

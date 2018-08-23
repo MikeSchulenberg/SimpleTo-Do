@@ -51,6 +51,7 @@ $("#cancel-new-todo").on("click", function() {
 $("#new-todo-form").on("submit", function(e) {
     e.preventDefault();
     var newTodo = $(this).serialize();
+    
     $.post("/todos", newTodo, function(data) {
         hideNewTodoForm();
         $("#new-todo-input").val("");
@@ -80,6 +81,20 @@ $("ul").on("click", ".edit-todo-toggle", function() {
 // Hide the 'edit' form for a single todo
 $("ul").on("click", ".cancel-todo-update", function() {
     hideEditTodoForm();
+});
+
+// Submit an updated todo to the server, then refresh the updated todo on the page
+$("#todo-list").on("submit", ".edit-todo-form", function(e) {
+    e.preventDefault();
+
+    var id = $(this).closest("li").attr("id");
+    var actionUrl = $(this).attr("action");
+    var updatedTodo = $(this).serialize();
+    
+    $.post(actionUrl, updatedTodo, function() {
+        $("#" + id).load(document.URL + " #" + id);
+        hideEditTodoForm();
+    });
 });
 
 // Request user confirmation to delete a single todo

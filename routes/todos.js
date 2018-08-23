@@ -17,7 +17,6 @@ router.post("/", function(req, res) {
         }
         
         else {
-            // res.redirect("/tasks");
             res.json(todo);
         }
     })
@@ -30,12 +29,12 @@ router.put("/:id", function(req, res) {
     
     var updatedTodo = {title: title, priority: priority};
     
-    Todo.findByIdAndUpdate(req.params.id, updatedTodo, function(err) {
+    Todo.findByIdAndUpdate(req.params.id, updatedTodo, function(err, todo) {
         if (err) {
             console.log(err);
         }
         
-        res.redirect("/tasks");
+        res.json(todo);
     });
 });
 
