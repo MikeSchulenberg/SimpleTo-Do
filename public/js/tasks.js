@@ -116,6 +116,9 @@ $("ul").on("click", ".delete-todo-button", function() {
 var hideNewTodoForm = function() {
     $("#new-todo-input").val("");
     $("#new-todo-div").hide();
+    $("#new-todo-div").find("label").removeClass("clicked-radio-button");
+    $("#new-todo-div").find(".button-medium-priority").addClass("clicked-radio-button");
+    $(".clicked-radio-button").button('toggle')
 };
 
 // If an 'edit todo' form is currently visible, hide it
