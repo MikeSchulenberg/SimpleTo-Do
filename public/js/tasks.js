@@ -147,7 +147,7 @@ var updateUserStats = function(data) {
     $originalItem = $("#user-stats-container");
     
     $.ajax({
-        url: "/todos/updateUserStats",
+        url: "/updateUserStats",
         data: {
             priority: priority,
             userStats

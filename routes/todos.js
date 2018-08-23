@@ -58,34 +58,4 @@ router.delete("/:id", function(req, res) {
     });
 });
 
-/* Increment the number of tasks completed by the user. Award a number of
-Achievement Points based on the priority of a completed todo. */
-router.post("/updateUserStats", function(req, res) {
-    var completedTasks = req.user.completedTasks + 1;
-    var achievementPoints = req.user.achievementPoints;
-    
-    switch (req.body.priority) {
-        case "high":
-            achievementPoints += 3;
-            break;
-        case "medium":
-            achievementPoints += 2;
-            break;
-        case "low":
-            achievementPoints += 1;
-            break;
-    }
-    
-    var updatedUser = {completedTasks: completedTasks, achievementPoints: achievementPoints};
-    User.findByIdAndUpdate(req.user._id, updatedUser, {new: true}, function(err, user) {
-        if (err) {
-            console.log(err);
-        }
-        
-        else {
-            res.json(user);
-        }
-    });
-});
-
 module.exports = router;
