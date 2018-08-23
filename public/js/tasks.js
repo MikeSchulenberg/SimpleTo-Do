@@ -7,12 +7,12 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 });
 
-// Delete a todo when its checkbox is clicked
+// Submit a completed todo when its checkbox is clicked
 $("ul").on("click", "input[type=checkbox]", function() {
     $(this).closest(".delete-todo-checkbox").submit();
 });
 
-//
+// Send AJAX request to delete the todo, then update the user stats
 $("ul").on("submit", ".delete-todo-checkbox", function(e) {
     e.preventDefault();
     var actionUrl = $(this).attr("action");
@@ -45,6 +45,19 @@ $("#new-todo-input").on("click", function() {
 // Hide the 'new todo' form
 $("#cancel-new-todo").on("click", function() {
     hideNewTodoForm();
+});
+
+// Submit a new todo to the server, then refresh the todo list on the page
+$("#new-todo-form").on("submit", function(e) {
+    e.preventDefault();
+    var newTodo = $(this).serialize();
+    $.post("/todos", newTodo, function(data) {
+        hideNewTodoForm();
+        $("#new-todo-input").val("");
+        
+        // Refresh the todo list on the page
+        $("#todo-list").load(document.URL + " #todo-list");
+    });
 });
 
 // Unhide the 'edit' form for a single todo

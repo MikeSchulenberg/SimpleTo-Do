@@ -11,13 +11,14 @@ router.post("/", function(req, res) {
     
     var newTodo = {title: title, priority: priority, "owner.id": ownerId};
     
-    Todo.create(newTodo, function(err) {
+    Todo.create(newTodo, function(err, todo) {
         if (err) {
             console.log(err);
         }
         
         else {
-            res.redirect("/tasks");
+            // res.redirect("/tasks");
+            res.json(todo);
         }
     })
 });
