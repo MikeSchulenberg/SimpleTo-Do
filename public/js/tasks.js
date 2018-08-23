@@ -143,14 +143,12 @@ var hideEditTodoForm = function(callback) {
 and Achievement Points */
 var updateUserStats = function(data) {
     var priority = data.priority;
-    var userStats = $("#user-stats").serialize();
     $originalItem = $("#user-stats-container");
     
     $.ajax({
         url: "/updateUserStats",
         data: {
-            priority: priority,
-            userStats
+            priority: priority
         },
         type: "POST",
         originalItem: $originalItem,
