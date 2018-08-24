@@ -1,7 +1,6 @@
 var express = require("express"),
     router  = express.Router(),
-    Todo    = require("../models/todo"),
-    User    = require("../models/user");
+    Todo    = require("../models/todo");
 
 // add new todo to the DB
 router.post("/", function(req, res) {
@@ -46,13 +45,7 @@ router.delete("/:id", function(req, res) {
         }
         
         else {
-            if (req.xhr) {
-                res.json(todo);
-            }
-            
-            else {
-                res.redirect("/tasks");
-            }
+            res.json(todo);
         }
     });
 });
