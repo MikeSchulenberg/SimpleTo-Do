@@ -7,38 +7,40 @@
 
     <ul id="todo-list">
         <% todos.forEach(function(todo) { %>
-            <li id="<%= todo._id %>" class="margin-top-5px">
-                <!-- Determine what class to assign to each checkbox based on
-                the priority of the todo -->
-                <% var priorityClass; %>
-                <% switch(todo.priority) {
-                    case "high": %>
-                        <% priorityClass = "high-priority"; %>
-                        <% break;
-                    case "medium": %>
-                        <% priorityClass = "medium-priority"; %>
-                        <% break;
-                    case "low": %>
-                        <% priorityClass = "low-priority"; %>
-                        <% break;
-                } %>
-                
-                <div class="task-container">    
-                    <div class="task-left-control <%= priorityClass %>">
-                        <form class="delete-todo-checkbox" action="/todos/<%= todo._id %>" method="POST">
-                            <input type="checkbox" name="taskcheckbox">
-                        </form>
-                    </div>
+            <li id="<%= todo._id %>">
+                <div class="margin-top-5px">
+                    <!-- Determine what class to assign to each checkbox based on
+                    the priority of the todo -->
+                    <% var priorityClass; %>
+                    <% switch(todo.priority) {
+                        case "high": %>
+                            <% priorityClass = "high-priority"; %>
+                            <% break;
+                        case "medium": %>
+                            <% priorityClass = "medium-priority"; %>
+                            <% break;
+                        case "low": %>
+                            <% priorityClass = "low-priority"; %>
+                            <% break;
+                    } %>
                     
-                    <div class="task-body">
-                        <%= todo.title %>
-                    </div>
+                    <div class="task-container">    
+                        <div class="task-left-control <%= priorityClass %>">
+                            <form class="delete-todo-checkbox" action="/todos/<%= todo._id %>" method="POST">
+                                <input type="checkbox" name="taskcheckbox">
+                            </form>
+                        </div>
+                        
+                        <div class="task-body">
+                            <%= todo.title %>
+                        </div>
+                        
+                        <i class="far fa-edit edit-todo-toggle" data-toggle="tooltip" data-placement="top" title="Edit"></i>
+                    </div>    
                     
-                    <i class="far fa-edit edit-todo-toggle" data-toggle="tooltip" data-placement="top" title="Edit"></i>
-                </div>    
+                    <% include ./partials/editTodoForm %>
                 
-                <% include ./partials/editTodoForm %>
-                
+                </div>
             </li>
         <% }); %>
     </ul>

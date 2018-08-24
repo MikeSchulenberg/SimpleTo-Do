@@ -56,8 +56,21 @@ $("#new-todo-form").on("submit", function(e) {
         hideNewTodoForm();
         $("#new-todo-input").val("");
         
-        // Refresh the todo list on the page
-        $("#todo-list").load(document.URL + " #todo-list");
+        // Display the new todo on the page
+
+        /* Append an empty, hidden <li> for the new todo so it can be replaced
+        with the todo's actual data. */
+        $("#todo-list").append(
+            `
+            <li id=${data._id} hidden></li>
+            `
+        );
+        
+        /* Load the contents of the new todo's <li>, rather than the <li> itself,
+        into the empty <li>. Loading just the <li> contents prevents nested <li>s. */
+        $("#" + data._id).load(document.URL + " #" + data._id + " > *", function() {
+            $("#" + data._id).removeAttr("hidden");
+        });
     });
 });
 
@@ -92,7 +105,9 @@ $("#todo-list").on("submit", ".edit-todo-form", function(e) {
     var updatedTodo = $(this).serialize();
     
     $.post(actionUrl, updatedTodo, function() {
-        $("#" + id).load(document.URL + " #" + id);
+        /* Load the contents of the updated todo's <li>, rather than the <li> itself.
+        Loading just the <li> contents prevents nested <li>s. */
+        $("#" + id).load(document.URL + " #" + id + " > *");
         hideEditTodoForm();
     });
 });
