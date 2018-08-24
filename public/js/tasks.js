@@ -12,11 +12,41 @@ $("#todo-list").on("click", "input[type=checkbox]", function() {
     $(this).closest(".delete-todo-checkbox").submit();
 });
 
-// Send AJAX request to delete the todo, then update the user stats
-$("#todo-list").on("submit", ".delete-todo-checkbox", function(e) {
+/* If the user clicks the Delete button for a todo, request user confirmation 
+before deleting */
+$("#todo-list").on("click", ".delete-todo-button", function() {
+    var thisObj = $(this);
+    
+    bootbox.confirm({
+        message: "Are you sure you want to delete this to-do?", 
+        buttons: {
+            confirm: {
+                label: "Yes",
+                className: "btn-danger"
+            },
+            
+            cancel: {
+                label: "No",
+                className: "btn-primary"
+            }
+        },
+        
+        callback: function(result) {
+            if (result) {
+                thisObj.closest(".edit-todo-div").find(".delete-todo-form").submit();
+            }
+        }
+    });
+});
+
+/* Send AJAX request to delete a todo. If the task is being deleted because the
+user marked a todo as complete, rather using the Delete button, update the user stats. */
+$("#todo-list").on("submit", ".delete-todo-checkbox, .delete-todo-form", function(e) {
     e.preventDefault();
+    var form = $(this);
     var actionUrl = $(this).attr("action");
     $itemToDelete = $(this).closest("li");
+    
     $.ajax({
         url: actionUrl,
         type: "DELETE",
@@ -26,7 +56,10 @@ $("#todo-list").on("submit", ".delete-todo-checkbox", function(e) {
         },
         success: function(data) {
             this.itemToDelete.remove();
-            updateUserStats(data);
+            
+            if (form.hasClass("delete-todo-checkbox")) {
+                updateUserStats(data);
+            }
         }
     });
 });
@@ -109,32 +142,6 @@ $("#todo-list").on("submit", ".edit-todo-form", function(e) {
         Loading just the <li> contents prevents nested <li>s. */
         $("#" + id).load(document.URL + " #" + id + " > *");
         hideEditTodoForm();
-    });
-});
-
-// Request user confirmation to delete a single todo
-$("#todo-list").on("click", ".delete-todo-button", function() {
-    var thisObj = $(this);
-    
-    bootbox.confirm({
-        message: "Are you sure you want to delete this to-do?", 
-        buttons: {
-            confirm: {
-                label: "Yes",
-                className: "btn-danger"
-            },
-            
-            cancel: {
-                label: "No",
-                className: "btn-primary"
-            }
-        },
-        
-        callback: function(result) {
-            if (result) {
-                thisObj.closest(".edit-todo-div").find(".delete-todo-form").submit();
-            }
-        }
     });
 });
 
