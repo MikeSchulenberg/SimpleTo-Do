@@ -8,12 +8,12 @@ $(function () {
 });
 
 // Submit a completed todo when its checkbox is clicked
-$("ul").on("click", "input[type=checkbox]", function() {
+$("#todo-list").on("click", "input[type=checkbox]", function() {
     $(this).closest(".delete-todo-checkbox").submit();
 });
 
 // Send AJAX request to delete the todo, then update the user stats
-$("ul").on("submit", ".delete-todo-checkbox", function(e) {
+$("#todo-list").on("submit", ".delete-todo-checkbox", function(e) {
     e.preventDefault();
     var actionUrl = $(this).attr("action");
     $itemToDelete = $(this).closest("li");
@@ -75,7 +75,7 @@ $("#new-todo-form").on("submit", function(e) {
 });
 
 // Unhide the 'edit' form for a single todo
-$("ul").on("click", ".edit-todo-toggle", function() {
+$("#todo-list").on("click", ".edit-todo-toggle", function() {
     // Hide the 'new todo' form if it happens to have been left open
     hideNewTodoForm();
     
@@ -92,7 +92,7 @@ $("ul").on("click", ".edit-todo-toggle", function() {
 });
 
 // Hide the 'edit' form for a single todo
-$("ul").on("click", ".cancel-todo-update", function() {
+$("#todo-list").on("click", ".cancel-todo-update", function() {
     hideEditTodoForm();
 });
 
@@ -113,7 +113,7 @@ $("#todo-list").on("submit", ".edit-todo-form", function(e) {
 });
 
 // Request user confirmation to delete a single todo
-$("ul").on("click", ".delete-todo-button", function() {
+$("#todo-list").on("click", ".delete-todo-button", function() {
     var thisObj = $(this);
     
     bootbox.confirm({
