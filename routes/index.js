@@ -71,16 +71,20 @@ Achievement Points based on the priority of a completed todo. */
 router.post("/updateUserStats", function(req, res) {
     var completedTasks = req.user.completedTasks + 1;
     var achievementPoints = req.user.achievementPoints;
+    var awardAmount = 0;
     
     switch (req.body.priority) {
         case "high":
             achievementPoints += 3;
+            awardAmount = 3;
             break;
         case "medium":
             achievementPoints += 2;
+            awardAmount = 2;
             break;
         case "low":
             achievementPoints += 1;
+            awardAmount = 1;
             break;
     }
     
@@ -91,7 +95,7 @@ router.post("/updateUserStats", function(req, res) {
         }
         
         else {
-            res.json(user);
+            res.json({user, awardAmount: awardAmount});
         }
     });
 });

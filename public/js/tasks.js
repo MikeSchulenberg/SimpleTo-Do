@@ -51,9 +51,6 @@ $("#todo-list").on("submit", ".delete-todo-checkbox, .delete-todo-form", functio
         url: actionUrl,
         type: "DELETE",
         itemToDelete: $itemToDelete,
-        data: {
-            isCheckbox: true
-        },
         success: function(data) {
             this.itemToDelete.remove();
             
@@ -201,11 +198,27 @@ var updateUserStats = function(data) {
             this.originalItem.html(
                 `
                 <div id="user-stats" class="d-flex flex-column bd-highlight ml-3">
-                    <div class="bd-highlight"><i class="far fa-check-square mr-2"></i>Completed Tasks: ${data.completedTasks}</div>
-                    <div class="bd-highlight"><i class="fas fa-trophy mr-2"></i>Achievement Points: ${data.achievementPoints}</div>
+                    <div class="bd-highlight"><i class="far fa-check-square mr-2"></i>Completed Tasks: ${data.user.completedTasks}</div>
+                    <div class="bd-highlight"><i class="fas fa-trophy mr-2"></i>Achievement Points: ${data.user.achievementPoints}</div>
                 </div>
                 `
             )
+            
+            showAchievementAward(data.awardAmount);
         }
     })
+};
+
+/* Show a dialog displaying how many Achievement Points were awarded for 
+completing a todo. */
+var showAchievementAward = function(awardAmount) {
+    var dialog = bootbox.dialog({
+        message: "+" + awardAmount + " Achievement Points",
+        size: "small",
+        closeButton: false
+    });
+    
+    setTimeout(function() {
+        dialog.modal("hide");
+    }, 1000);
 };

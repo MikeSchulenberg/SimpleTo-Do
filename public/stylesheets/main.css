@@ -249,3 +249,7 @@ li:hover .fa-edit {
     background-image: -o-linear-gradient(left, #ffffff, #2980b9, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #2980b9, #ffffff); 
 }
+
+.modal-body {
+    text-align: center;
+}
