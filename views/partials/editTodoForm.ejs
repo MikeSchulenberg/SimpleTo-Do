@@ -1,5 +1,5 @@
 <div class="edit-todo-div">
-    <form class="edit-todo-form" action="/todos/<%= todo._id %>?_method=PUT" method="POST">
+    <form class="edit-todo-form" action="/todos/<%= todo._id %>" method="POST">
         <input class="title-text standard-text-input" type="text submit" name="title" value="<%= todo.title %>">
         <span class="form-label">Priority:</span>
         <div class="radio-button-container">
@@ -41,7 +41,7 @@
     
     <hr class="button-separator">
     
-    <form class="text-center button-top-cushion button-bottom-cushion delete-todo-form" action="/todos/<%= todo._id %>?_method=DELETE" method="POST">
+    <form class="text-center button-top-cushion button-bottom-cushion delete-todo-form" action="/todos/<%= todo._id %>" method="POST">
         <button class="btn btn-danger delete-todo-button" type="button">Delete</button>
     </form>
 </div>

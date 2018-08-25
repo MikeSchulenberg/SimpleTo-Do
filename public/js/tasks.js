@@ -137,12 +137,17 @@ $("#todo-list").on("submit", ".edit-todo-form", function(e) {
     var actionUrl = $(this).attr("action");
     var updatedTodo = $(this).serialize();
     
-    $.post(actionUrl, updatedTodo, function() {
-        /* Load the contents of the updated todo's <li>, rather than the <li> itself.
-        Loading just the <li> contents prevents nested <li>s. */
-        $("#" + id).load(document.URL + " #" + id + " > *");
-        hideEditTodoForm();
-    });
+    $.ajax({
+        url: actionUrl,
+        data: updatedTodo,
+        type: "PUT",
+        success: function() {
+            /* Load the contents of the updated todo's <li>, rather than the <li> itself.
+            Loading just the <li> contents prevents nested <li>s. */
+            $("#" + id).load(document.URL + " #" + id + " > *");
+            hideEditTodoForm();
+        }
+    })
 });
 
 //------------------------------------------------------------------------------

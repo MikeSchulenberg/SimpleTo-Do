@@ -2,10 +2,6 @@
 var express = require("express");
 var app = express();
 
-// init method-override
-var methodOverride = require("method-override");
-app.use(methodOverride("_method"));
-
 // init body-parser
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended: true}));
