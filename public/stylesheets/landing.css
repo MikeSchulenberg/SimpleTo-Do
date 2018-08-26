@@ -3,8 +3,11 @@ body {
     /*background: url(https://images.unsplash.com/photo-1500445113926-4b0454111bc9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d1a1f660ac096f044cabf3617c746e75);*/
     /*background: url(https://images.unsplash.com/photo-1520970014086-2208d157c9e2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6d13474751db29fc0be006b70ab81137);*/
     /*background: url(https://images.unsplash.com/photo-1513949145697-7a3b42cb9f21?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=263c8d2e45d706f6be57bb8cd731a14f);*/
-    background: url(https://images.unsplash.com/photo-1483546363825-7ebf25fb7513?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=34f06173fc9d9c014d643c39fb7bfa13);
+    /*background: url(https://images.unsplash.com/photo-1483546363825-7ebf25fb7513?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=34f06173fc9d9c014d643c39fb7bfa13);*/
     /*background: url(https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=612621fd686897b4812287430c8be9db);*/
+    /*background: url(https://images.unsplash.com/photo-1432821596592-e2c18b78144f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjE2ODQ0fQ&s=137b2e38c254858884a2a4c1f99ebaca);*/
+    /*background: url(https://images.unsplash.com/photo-1432821579285-1b649e5b1ce3?ixlib=rb-0.3.5&s=0887bc03945a070a20780f0034c26c4f);*/
+    background: url(https://images.unsplash.com/photo-1485498128961-422168ba5f87?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6cb8f189e636b9d230e25fac91db9d55);
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -19,9 +22,11 @@ html {
 }
 
 .jumbotron {
-    margin: 18em auto;
+    margin: 21.5em auto;
     text-align: center;
-    background-color: rgba(179, 0, 179, 0.9);
+    /*background-color: rgba(179, 0, 179, 0.9);*/
+    /*background-color: rgba(102, 0, 102, 0.9);*/
+    background-color: rgba(0, 134, 179, 0.8);
     width: 50%;
 }
 
@@ -41,9 +46,11 @@ hr {
 }
 
 .btn-lg:hover {
-    color: rgb(179, 0, 179);
+    /*color: rgb(179, 0, 179);*/
+    color: rgb(0, 134, 179);
 }
 
 .btn-lg:active {
-    color: rgb(102, 0, 102) !important;
+    /*color: rgb(102, 0, 102) !important;*/
+    color: rgb(0, 96, 128) !important;
 }
