@@ -4,16 +4,23 @@
         <title>Simple To-Do</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
         <link rel="stylesheet" href="/stylesheets/landing.css">
     </head>
     <body>
         <% include ./partials/alerts %>
         
-        <h1>Simple To-Do</h1>
-        
-        <p>Simply boost your producitivity</p>
-        
-        <a class="btn btn-secondary btn-lg" href="/register">Sign Up</a>
-        <a class="btn btn-primary btn-lg" href="/login">Log In</a>
+        <div class="container">
+            <div class="jumbotron">
+                <h1 class="mb-4">Simple To-Do</h1>
+            
+                <h5>Simply boost your productivity</h5>
+                
+                <hr>
+                
+                <a class="btn btn-outline-light btn-lg" href="/register"><i class="fas fa-user-plus mr-2"></i>Sign Up</a>
+                <a class="btn btn-outline-light btn-lg" href="/login">Log In<i class="fas fa-user ml-2"></i></a>
+            </div>
+        </div>
         
         <% include ./partials/footer %>
