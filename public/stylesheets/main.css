@@ -1,8 +1,15 @@
 body {
     font-family: Roboto;
-    background: #2BC0E4;
-    background: -webkit-linear-gradient(to left, #EAECC6, #2BC0E4);
-    background: linear-gradient(to left, #EAECC6, #2BC0E4);
+    /*background: #2BC0E4;*/
+    /*background: -webkit-linear-gradient(to left, #EAECC6, #2BC0E4);*/
+    /*background: linear-gradient(to left, #EAECC6, #2BC0E4);*/
+    background: url("/annie-spratt-197448-unsplash-blur.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+html {
+    height: 100%;
 }
 
 .navbar-custom,
@@ -29,12 +36,21 @@ body {
 }
 
 .master-container {
-    width: 450px;
+    /*width: 450px;*/
     margin: 100px auto;
+    
+    /* TESTING */
+    background-color: rgb(0, 134, 179);
+    /*background-color: rgba(0, 134, 179, 0.5);*/
+    width: 460px;
+    padding-bottom: 5px;
 }
 
 .master-container h1 {
-    background: #2980b9;
+    /*background: #2980b9;*/
+    /*background: rgb(102, 153, 153);*/
+    /*background: rgb(102, 0, 102);*/
+    background: rgb(102, 102, 153);
     color: white;
     margin: 0;
     padding: 10px 20px;
@@ -43,10 +59,25 @@ body {
     font-weight: normal;
 }
 
-ul {
+.account-button {
+    width: 22%;
+}
+
+.account-button:hover {
+    color: rgb(0, 134, 179);
+}
+
+.account-button:active {
+    color: rgb(0, 96, 128) !important;
+}
+
+#todo-list {
     list-style: none;
-    margin: 0;
+    margin: 0 5px;
     padding: 0;
+    
+    /* TESTING */
+    width: 450px;
 }
 
 li {
@@ -62,7 +93,7 @@ li {
 .standard-text-input {
     font-size: 18px;
     color: #2980b9;
-    width: 100%;
+    /*width: 100%;*/
     padding: 13px 13px 13px 20px;
     box-sizing: border-box;
     height: 60px;
@@ -70,6 +101,10 @@ li {
     /* gets rid of gap and prevents lis from shifting downward
     when focused */
     border: 3px solid rgba(0, 0, 0, 0);
+    
+    /* TESTING */
+    width: 450px;
+    margin: 0 5px;
 }
 
 .standard-text-input:hover,
@@ -233,13 +268,13 @@ li:hover .fa-edit {
     color: white;
 }
 
-.button-top-cushion {
-    padding-top: 10px;
-}
+/*.button-top-cushion {*/
+/*    padding-top: 10px;*/
+/*}*/
 
-.button-bottom-cushion {
-    padding-bottom: 10px
-}
+/*.button-bottom-cushion {*/
+/*    padding-bottom: 10px*/
+/*}*/
 
 .cancel-submit-button {
     width: 80px;
