@@ -154,7 +154,7 @@ input[type=checkbox] {
 }
 
 input[type=checkbox]:hover {
-    border: 2px solid #2980b9;
+    border: 2px solid rgb(59, 62, 72);
 }
 
 /* For IE?*/
@@ -169,7 +169,7 @@ input[type=checkbox]::before {
     right: 0;
     top: -0.66em;
     visibility: hidden;
-    color: #2980b9;
+    color: rgb(47, 51, 61);
 }
 
 input[type=checkbox]:checked::before {
