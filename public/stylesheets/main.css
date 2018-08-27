@@ -214,6 +214,10 @@ li:hover .fa-edit {
 #new-todo-div {
     display: none;
     background: #fff;
+    
+    /* testing */
+    width: 450px;
+    margin: 0 auto;
 }
 
 .edit-todo-div {
@@ -221,7 +225,7 @@ li:hover .fa-edit {
 }
 
 .form-label {
-    color: #2980b9;
+    color: rgb(47, 51, 61);
     padding-left: 24px;
 }
 
@@ -230,12 +234,12 @@ li:hover .fa-edit {
 }
 
 .radio-button-group {
-    margin: 20px 41px;
+    margin: 20px 41.5px;
 }
 
 .button-high-priority {
-    border-color: #2980b9;
-    color: #2980b9;
+    border-color: rgb(47, 51, 61);
+    color: rgb(47, 51, 61);
     background-color: white;
     width: 60px;
 }
@@ -243,13 +247,17 @@ li:hover .fa-edit {
 .button-high-priority:hover,
 .button-high-priority.active {
     background-color: #ac0000;
-    border-color: #9d0000;
+    border-color: #ac0000;
     color: white;
 }
 
+.button-high-priority.focus {
+    box-shadow: 0 0 0 3px rgba(172, 0, 0, 0.5);
+}
+
 .button-medium-priority {
-    border-color: #2980b9;
-    color: #2980b9;
+    border-color: rgb(47, 51, 61);
+    color: rgb(47, 51, 61);
     background-color: white;
     width: 84px;
 }
@@ -257,13 +265,17 @@ li:hover .fa-edit {
 .button-medium-priority:hover,
 .button-medium-priority.active {
     background-color: #f8801c;
-    border-color: #f8760c;
+    border-color: #f8801c;
     color: white;
 }
 
+.button-medium-priority.focus {
+    box-shadow: 0 0 0 3px rgba(248, 128, 28, 0.5);
+}
+
 .button-low-priority {
-    border-color: #2980b9;
-    color: #2980b9;
+    border-color: rgb(47, 51, 61);
+    color: rgb(47, 51, 61);
     background-color: white;
     width: 60px;
 }
@@ -271,8 +283,12 @@ li:hover .fa-edit {
 .button-low-priority:hover,
 .button-low-priority.active {
     background-color: #fcc12b;
-    border-color: #fcbc14;
+    border-color: #fcc12b;
     color: white;
+}
+
+.button-low-priority.focus {
+    box-shadow: 0 0 0 3px rgba(252, 193, 43, 0.5);
 }
 
 /*.button-top-cushion {*/
@@ -284,7 +300,24 @@ li:hover .fa-edit {
 /*}*/
 
 .cancel-submit-button {
-    width: 80px;
+    width: 22%;
+    background-color: rgb(73, 79, 92);
+    border-color: rgb(73, 79, 92);
+    color: #fff;
+}
+
+.cancel-submit-button:hover {
+    background-color: rgb(59, 62, 72);
+    border-color: rgb(59, 62, 72);
+}
+
+.cancel-submit-button.active {
+    background-color: rgb(47, 51, 61) !important;
+    border-color: rgb(47, 51, 61) !important;
+}
+
+.cancel-submit-button:focus {
+    box-shadow: 0 0 0 3px rgba(47, 51, 61, 0.5);
 }
 
 .button-separator {
