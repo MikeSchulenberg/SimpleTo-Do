@@ -22,12 +22,12 @@ $("#todo-list").on("click", ".delete-todo-button", function() {
         buttons: {
             confirm: {
                 label: "Yes",
-                className: "btn-danger"
+                className: "btn-danger modal-button"
             },
             
             cancel: {
                 label: "No",
-                className: "btn-primary"
+                className: "cancel-submit-button modal-button"
             }
         },
         

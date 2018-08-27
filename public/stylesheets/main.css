@@ -50,7 +50,7 @@ html {
 }
 
 .account-button {
-    width: 22%;
+    width: 21%;
 }
 
 .account-button:hover {
@@ -304,4 +304,8 @@ li:hover .fa-edit {
 
 .modal-body {
     text-align: center;
+}
+
+.modal-button {
+    width: 12%;
 }
