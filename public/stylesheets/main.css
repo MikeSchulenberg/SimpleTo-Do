@@ -14,7 +14,7 @@ html {
 
 .navbar-custom,
 .active-custom:active {
-    background-color: rgb(0, 134, 179);
+    background-color: rgb(73, 79, 92);
 }
 
 .fa-tasks {
@@ -40,7 +40,7 @@ html {
     margin: 100px auto;
     
     /* TESTING */
-    background-color: rgb(0, 134, 179);
+    background-color: rgb(73, 79, 92);
     /*background-color: rgba(0, 134, 179, 0.5);*/
     width: 460px;
     padding-bottom: 5px;
@@ -50,7 +50,10 @@ html {
     /*background: #2980b9;*/
     /*background: rgb(102, 153, 153);*/
     /*background: rgb(102, 0, 102);*/
-    background: rgb(102, 102, 153);
+    /*background: rgb(102, 102, 153);*/
+    /*background: #b30042;*/
+    /*background: #b36500;*/
+    background: rgb(47, 51, 61);
     color: white;
     margin: 0;
     padding: 10px 20px;
@@ -64,11 +67,11 @@ html {
 }
 
 .account-button:hover {
-    color: rgb(0, 134, 179);
+    color: rgb(73, 79, 92);
 }
 
 .account-button:active {
-    color: rgb(0, 96, 128) !important;
+    color: rgb(47, 51, 61) !important;
 }
 
 #todo-list {
@@ -92,7 +95,7 @@ li {
 
 .standard-text-input {
     font-size: 18px;
-    color: #2980b9;
+    /*color: #2980b9;*/
     /*width: 100%;*/
     padding: 13px 13px 13px 20px;
     box-sizing: border-box;
@@ -105,12 +108,16 @@ li {
     /* TESTING */
     width: 450px;
     margin: 0 5px;
+    color: #3b3e48;
 }
 
 .standard-text-input:hover,
 .standard-text-input:focus {
-    border: 3px solid #2980b9;
+    /*border: 3px solid #2980b9;*/
     outline: none;
+    
+    /* testing */
+    border: 3px solid rgb(47, 51, 61);
 }
 
 .margin-top-5px {
