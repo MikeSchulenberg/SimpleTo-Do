@@ -212,7 +212,8 @@ li:hover .fa-edit {
 }
 
 .fa-edit:hover {
-    color: #2980b9;
+    /*color: #2980b9;*/
+    color: rgb(59, 62, 72);
 }
 
 #new-todo-div {
@@ -238,7 +239,7 @@ li:hover .fa-edit {
 }
 
 .radio-button-group {
-    margin: 20px 41.5px;
+    margin: 20px 42px;
 }
 
 .button-high-priority {
@@ -304,7 +305,7 @@ li:hover .fa-edit {
 /*}*/
 
 .cancel-submit-button {
-    width: 22%;
+    width: 21%;
     background-color: rgb(73, 79, 92);
     border-color: rgb(73, 79, 92);
     color: #fff;
