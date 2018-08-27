@@ -111,6 +111,10 @@ li {
     color: #3b3e48;
 }
 
+.edit-todo-text-input {
+    margin: 0;
+}
+
 .standard-text-input:hover,
 .standard-text-input:focus {
     /*border: 3px solid #2980b9;*/
@@ -324,10 +328,10 @@ li:hover .fa-edit {
     margin: 0;
     border: 0; 
     height: 1px; 
-    background-image: -webkit-linear-gradient(left, #ffffff, #2980b9, #ffffff);
-    background-image: -moz-linear-gradient(left, #ffffff, #2980b9, #ffffff);
-    background-image: -o-linear-gradient(left, #ffffff, #2980b9, #ffffff);
-    background-image: linear-gradient(to right, #ffffff, #2980b9, #ffffff); 
+    background-image: -webkit-linear-gradient(left, #ffffff, #2f333d, #ffffff);
+    background-image: -moz-linear-gradient(left, #ffffff, #2f333d, #ffffff);
+    background-image: -o-linear-gradient(left, #ffffff, #2f333d, #ffffff);
+    background-image: linear-gradient(to right, #ffffff, #2f333d, #ffffff); 
 }
 
 .modal-body {

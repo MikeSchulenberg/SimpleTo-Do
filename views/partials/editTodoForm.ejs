@@ -1,6 +1,6 @@
 <div class="edit-todo-div">
     <form class="edit-todo-form" action="/todos/<%= todo._id %>" method="POST">
-        <input class="title-text standard-text-input" type="text" name="title" value="<%= todo.title %>">
+        <input class="title-text standard-text-input edit-todo-text-input" type="text" name="title" value="<%= todo.title %>">
         <span class="form-label">Priority:</span>
         <div class="radio-button-container">
             <div class="btn-group btn-group-toggle radio-button-group" data-toggle="buttons">
@@ -33,15 +33,15 @@
                 </label>
             </div>
         </div>
-        <div class="text-center button-bottom-cushion">
-                <button class="btn btn-primary cancel-submit-button cancel-todo-update" type="button">Cancel</button>
-                <button class="btn btn-primary cancel-submit-button">Submit</button>
+        <div class="text-center">
+                <button class="btn cancel-submit-button cancel-todo-update" type="button">Cancel</button>
+                <button class="btn cancel-submit-button">Submit</button>
         </div>
     </form>
     
-    <hr class="button-separator">
+    <hr class="button-separator mt-2">
     
-    <form class="text-center button-top-cushion button-bottom-cushion delete-todo-form" action="/todos/<%= todo._id %>" method="POST">
-        <button class="btn btn-danger delete-todo-button" type="button">Delete</button>
+    <form class="text-center delete-todo-form" action="/todos/<%= todo._id %>" method="POST">
+        <button class="btn btn-danger delete-todo-button mt-2 mb-2" type="button">Delete</button>
     </form>
 </div>
