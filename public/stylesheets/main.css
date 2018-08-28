@@ -34,6 +34,37 @@ html {
     margin-top: 20px;
 }
 
+.jumbotron {
+    margin: 100px auto;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(73, 79, 92, 0.8);
+    width: 50%;
+}
+
+#app-title {
+    font-size: 4em;
+    font-weight: 700;
+}
+
+#landing-hr {
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.landing-button {
+    width: 30%;
+}
+
+.landing-button:hover {
+    color: rgb(73, 79, 92);
+}
+
+.landing-button:active {
+    color: rgb(47, 51, 61) !important;
+}
+
 .master-container {
     margin: 100px auto;
     background-color: rgb(73, 79, 92);
