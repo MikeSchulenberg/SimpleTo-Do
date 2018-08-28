@@ -8,6 +8,8 @@ body {
     background: url(https://images.unsplash.com/photo-1442406964439-e46ab8eff7c4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cc6f92ef530adcffe696f5e2449ad62c);
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 html {
