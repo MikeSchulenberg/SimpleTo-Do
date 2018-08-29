@@ -13,7 +13,7 @@ html {
 
 .navbar-custom,
 .active-custom:active {
-    background-color: rgb(73, 79, 92);
+    background-color: #494f5c;
 }
 
 .fa-tasks {
@@ -58,22 +58,22 @@ html {
 }
 
 .landing-button:hover {
-    color: rgb(73, 79, 92);
+    color: #494f5c;
 }
 
 .landing-button:active {
-    color: rgb(47, 51, 61) !important;
+    color: #2f333d !important;
 }
 
 .master-container {
     margin: 100px auto;
-    background-color: rgb(73, 79, 92);
+    background-color: #494f5c;
     width: 460px;
     padding-bottom: 5px;
 }
 
 .master-container h1 {
-    background: rgb(47, 51, 61);
+    background: #2f333d;
     color: white;
     margin: 0;
     padding: 10px 20px;
@@ -87,11 +87,11 @@ html {
 }
 
 .account-button:hover {
-    color: rgb(73, 79, 92);
+    color: #494f5c;
 }
 
 .account-button:active {
-    color: rgb(47, 51, 61) !important;
+    color: #2f333d !important;
 }
 
 #todo-list {
@@ -131,7 +131,7 @@ li {
 
 .standard-text-input:hover,
 .standard-text-input:focus {
-    border: 3px solid rgb(47, 51, 61);
+    border: 3px solid #2f333d;
     outline: none;
 }
 
@@ -165,7 +165,7 @@ input[type=checkbox] {
 }
 
 input[type=checkbox]:hover {
-    border: 2px solid rgb(59, 62, 72);
+    border: 2px solid #3b3e48;
 }
 
 /* For IE?*/
@@ -180,7 +180,7 @@ input[type=checkbox]::before {
     right: 0;
     top: -0.66em;
     visibility: hidden;
-    color: rgb(47, 51, 61);
+    color: #2f333d;
 }
 
 input[type=checkbox]:checked::before {
@@ -223,7 +223,7 @@ li:hover .fa-edit {
 }
 
 .fa-edit:hover {
-    color: rgb(59, 62, 72);
+    color: #3b3e48;
 }
 
 #new-todo-div {
@@ -238,7 +238,7 @@ li:hover .fa-edit {
 }
 
 .form-label {
-    color: rgb(47, 51, 61);
+    color: #2f333d;
     padding-left: 24px;
 }
 
@@ -251,8 +251,8 @@ li:hover .fa-edit {
 }
 
 .button-high-priority {
-    border-color: rgb(47, 51, 61);
-    color: rgb(47, 51, 61);
+    border-color: #2f333d;
+    color: #2f333d;
     background-color: white;
     width: 60px;
 }
@@ -269,8 +269,8 @@ li:hover .fa-edit {
 }
 
 .button-medium-priority {
-    border-color: rgb(47, 51, 61);
-    color: rgb(47, 51, 61);
+    border-color: #2f333d;
+    color: #2f333d;
     background-color: white;
     width: 84px;
 }
@@ -287,8 +287,8 @@ li:hover .fa-edit {
 }
 
 .button-low-priority {
-    border-color: rgb(47, 51, 61);
-    color: rgb(47, 51, 61);
+    border-color: #2f333d;
+    color: #2f333d;
     background-color: white;
     width: 60px;
 }
@@ -306,19 +306,19 @@ li:hover .fa-edit {
 
 .cancel-submit-button {
     width: 21%;
-    background-color: rgb(73, 79, 92);
-    border-color: rgb(73, 79, 92);
+    background-color: #494f5c;
+    border-color: #494f5c;
     color: #fff;
 }
 
 .cancel-submit-button:hover {
-    background-color: rgb(59, 62, 72);
-    border-color: rgb(59, 62, 72);
+    background-color: #3b3e48;
+    border-color: #3b3e48;
 }
 
 .cancel-submit-button.active {
-    background-color: rgb(47, 51, 61) !important;
-    border-color: rgb(47, 51, 61) !important;
+    background-color: #2f333d !important;
+    border-color: #2f333d !important;
 }
 
 .cancel-submit-button:focus {
