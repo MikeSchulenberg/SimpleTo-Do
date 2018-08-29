@@ -59,12 +59,20 @@ html {
     width: 30%;
 }
 
-.landing-button:hover {
-    color: #494f5c;
+.account-button {
+    width: 21%;
 }
 
-.landing-button:active {
-    color: #2f333d !important;
+.landing-button:hover,
+.account-button:hover {
+    color: #fff;
+    background-color: #3b3e48;
+}
+
+.landing-button:active,
+.account-button:active {
+    color: #3b3e48 !important;
+    background-color: #2f333d !important;
 }
 
 .master-container {
@@ -82,18 +90,6 @@ html {
     text-transform: uppercase;
     font-size: 24px;
     font-weight: normal;
-}
-
-.account-button {
-    width: 21%;
-}
-
-.account-button:hover {
-    color: #494f5c;
-}
-
-.account-button:active {
-    color: #2f333d !important;
 }
 
 #todo-list {
