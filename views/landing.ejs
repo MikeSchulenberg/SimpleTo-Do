@@ -10,17 +10,31 @@
     <body>
         <% include ./partials/alerts %>
         
-        <div class="container">
-            <div class="jumbotron">
-                <h1 id="app-title" class="mb-4">Simple To-Do</h1>
+        <div id="landing-page-content">
+            <h1 id="app-title" class="mb-4">Simple To-Do</h1>
             
-                <h5>Simply get things done</h5>
-                
-                <hr id="landing-hr">
-                
+            <h5>Simply get things done</h5>
+            
+            <hr id="landing-hr">
+            
+            <div class="pb-3">
                 <a class="btn btn-outline-light btn-lg landing-button" href="/register"><i class="fas fa-user-plus mr-2"></i>Sign Up</a>
                 <a class="btn btn-outline-light btn-lg landing-button" href="/login">Log In<i class="fas fa-user ml-2"></i></a>
             </div>
+                
         </div>
+        
+        <!--<div class="container">-->
+        <!--    <div class="jumbotron">-->
+        <!--        <h1 id="app-title" class="mb-4">Simple To-Do</h1>-->
+            
+        <!--        <h5>Simply get things done</h5>-->
+                
+        <!--        <hr id="landing-hr">-->
+                
+        <!--        <a class="btn btn-outline-light btn-lg landing-button" href="/register"><i class="fas fa-user-plus mr-2"></i>Sign Up</a>-->
+        <!--        <a class="btn btn-outline-light btn-lg landing-button" href="/login">Log In<i class="fas fa-user ml-2"></i></a>-->
+        <!--    </div>-->
+        <!--</div>-->
         
         <% include ./partials/footer %>

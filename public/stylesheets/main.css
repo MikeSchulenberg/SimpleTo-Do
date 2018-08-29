@@ -34,17 +34,19 @@ html {
     margin-top: 20px;
 }
 
-.jumbotron {
+#landing-page-content {
     margin: 100px auto;
     text-align: center;
     color: #fff;
-    background-color: rgba(73, 79, 92, 0.8);
-    width: 50%;
+    background-color: rgba(73, 79, 92, 0.95);
+    width: 560px;
+    border-radius: 15px;
 }
 
 #app-title {
     font-size: 4em;
     font-weight: 700;
+    text-shadow: 2px 2px #2f333d;
 }
 
 #landing-hr {
