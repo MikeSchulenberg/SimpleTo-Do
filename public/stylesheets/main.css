@@ -168,21 +168,17 @@ li {
     position: absolute;
     top: 0;
     height: 100%;
+    background-color: #3b3e48;
 }
 
 input[type=checkbox] {
     -webkit-appearance: none;
     -moz-appearance: none;
     position: relative;
-    width: 1em;
-    height: 1em;
-    border: 1px solid rgba(0, 0, 0, 0);
-    vertical-align: -3px;
+    width: 20px;
+    height: 20px;
+    vertical-align: -4px;
     background: #fff;
-}
-
-input[type=checkbox]:hover {
-    border: 2px solid #3b3e48;
 }
 
 /* For IE?*/
@@ -193,9 +189,9 @@ input[type=checkbox]::-ms-check {
 input[type=checkbox]::before {
     content: "✔";
     position: absolute;
-    font-size: 1.2em;
+    font-size: 1em;
     right: 0;
-    top: -0.66em;
+    top: -0.9em;
     visibility: hidden;
     color: #2f333d;
 }
@@ -206,15 +202,30 @@ input[type=checkbox]:checked::before {
 }
 
 .high-priority {
-    background-color: #ac0000;
+    border: 4px solid #ac0000;
+}
+
+.high-priority:hover {
+    background-color: #ffcccc;
+    box-shadow: 0 0 0 2px #ac0000;
 }
 
 .medium-priority {
-    background-color: #f8801c;
+    border: 4px solid #f8801c;
+}
+
+.medium-priority:hover {
+    background-color: #fdd5b5;
+    box-shadow: 0 0 0 2px #f8801c;
 }
 
 .low-priority {
-    background-color: #fcc12b;
+    border: 4px solid #fcc12b;
+}
+
+.low-priority:hover {
+    background-color: #fee9b4;
+    box-shadow: 0 0 0 2px #fcc12b;
 }
 
 .task-body {
