@@ -16,7 +16,7 @@ html {
     background-color: #494f5c;
 }
 
-.fa-tasks {
+#navbar-icon {
     padding: 0 10px;
     font-size: 1.5em;
     vertical-align: -4px;
@@ -35,13 +35,20 @@ html {
     height: 60px;
 }
 
-#landing-page-content {
-    margin: 100px auto;
+#landing-content {
+    margin: 200px auto;
+    padding-top: 10px;
     text-align: center;
     color: #fff;
-    background-color: rgba(73, 79, 92, 0.95);
-    width: 560px;
+    background-color: rgba(73, 79, 92, 0.8);
+    width: 580px;
     border-radius: 10px;
+}
+
+#landing-icon {
+    padding-right: 15px;
+    font-size: 1.2em;
+    vertical-align: -6px;
 }
 
 #app-title {
