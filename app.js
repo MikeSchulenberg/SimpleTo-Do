@@ -16,7 +16,8 @@ app.use(expressSanitizer());
 
 // init mongoose
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/simple-to-do-test", {useNewUrlParser: true});
+var url = process.env.DATABASEURL || "mongodb://localhost:27017/simple-to-do"
+mongoose.connect(url, {useNewUrlParser: true});
 
 // init passport
 var passport        = require("passport"),
