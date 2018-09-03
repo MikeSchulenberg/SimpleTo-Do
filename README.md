@@ -21,3 +21,5 @@ To start using the application, visit the [landing page](https://young-cliffs-56
 To edit an existing to-do, hold the mouse pointer over the desired task until the Edit icon appears. Click on the icon to open the Edit To-Do form. Use the text input to change the to-do's description, and use the Priority buttons to change the current priority. Click the Submit button to update the to-do. This form can also be used to delete a to-do without updating the user's Completed Tasks and Achievement Point totals.
 
 To complete a to-do, simply click its associated checkbox. This will update the user's number of Completed Tasks and award a number of Achievement Points based on the to-do's priority.
+
+![alt text]()
