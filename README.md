@@ -22,4 +22,4 @@ To edit an existing to-do, hold the mouse pointer over the desired task until th
 
 To complete a to-do, simply click its associated checkbox. This will update the user's number of Completed Tasks and award a number of Achievement Points based on the to-do's priority.
 
-![alt text]()
+![alt text](https://github.com/MikeSchulenberg/SimpleTo-Do/blob/master/SimpleTo-Do-img.JPG)
